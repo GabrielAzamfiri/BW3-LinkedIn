@@ -1,13 +1,17 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./App.css";
-import { Container } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import MainProfile from "./components/MainProfile";
 
 function App() {
   return (
     <Container>
-      <MainProfile />
+      <Row className="justify-content-center">
+        <Col xs={10}>
+          <MainProfile />
+        </Col>
+      </Row>
     </Container>
   );
 }

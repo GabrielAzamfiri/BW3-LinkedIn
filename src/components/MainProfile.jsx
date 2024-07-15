@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { myProfileAction } from "../redux/actions";
-import { BookHalf, Pencil, ShieldCheck } from "react-bootstrap-icons";
+import { Pencil, ShieldCheck } from "react-bootstrap-icons";
 
 const MainProfile = () => {
   const dispatch = useDispatch();
@@ -37,13 +37,13 @@ const MainProfile = () => {
                   {profile.name} {profile.surname}
                 </Card.Title>
 
-                <Button variant="btn btn-outline-primary " className="mx-2 rounded-pill d-flex align-items-center ">
-                  <ShieldCheck className="fs-5 me-2" /> Verifica ora
+                <Button variant="btn btn-outline-primary " className="mx-2 rounded-pill d-flex align-items-center fw-bold ">
+                  <ShieldCheck className="fs-5 me-2 fw-bold" /> Verifica ora
                 </Button>
               </div>
               <Card.Text> {profile.title}</Card.Text>
               <Card.Text>
-                <span className="opacity-50 me-3 lead"> {profile.area}</span>
+                <span className="opacity-75 me-3 lead"> {profile.area}</span>
                 <a className="fw-bold link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">
                   Informazioni di contatto
                 </a>
@@ -56,24 +56,24 @@ const MainProfile = () => {
           </Col>
 
           <Col className="d-flex mt-4 align-items-center justify-content-end ">
-            <BookHalf className="fs-1 me-3" />
-            <span className="lh-sm">
-              <strong>
-                Istituto Tecnico Industriale <br /> Renato Cartesio
-              </strong>
-            </span>
+            <a href="https://www.linkedin.com/school/epicodeitalia/" className="btn">
+              <img src="src\assets\epicodeschool_logo.jpg" alt="logo Epico" width={80} />
+              <span className="lh-sm">
+                <strong>EPICODE</strong>
+              </span>
+            </a>
           </Col>
           <Col xs={12} className="mb-4">
-            <Button variant="primary" className="rounded-pill me-2  ">
+            <Button variant="primary" className="rounded-pill me-2 fw-bold ">
               Disponibile per
             </Button>
-            <Button variant="btn btn-outline-primary" className="me-2 rounded-pill">
+            <Button variant="btn btn-outline-primary" className="me-2 rounded-pill fw-bold">
               Aggiungi sezione del profilo
             </Button>
-            <Button variant="btn btn-outline-primary" className="me-2 rounded-pill">
+            <Button variant="btn btn-outline-primary" className="me-2 rounded-pill fw-bold">
               Migliora profilo
             </Button>
-            <Button variant="btn btn-outline-dark" className="me-2 rounded-pill">
+            <Button variant="btn btn-outline-dark" className="me-2 rounded-pill fw-bold">
               Altro
             </Button>
           </Col>
