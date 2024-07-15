@@ -1,0 +1,46 @@
+body {
+    font: 16px Helvetica, Arial, sans-serif;
+}
+
+
+
+.icon {
+    margin-right: 12px;
+}
+
+.icons2 {
+    margin-right: 33px;
+}
+
+.titolo {
+    font-weight: 700;
+}
+
+
+.sotto {
+    color: rgb(140, 137, 137);
+
+}
+
+.sottotitolo {
+    color: rgb(140, 137, 137);
+    margin-left: 12px;
+
+}
+
+.bodyText {
+    color: rgb(89, 88, 88)
+}
+
+.tabella {
+    border-radius: 18px;
+}
+
+.ultimo {
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.testoAggiuntivo {
+    color: rgb(137, 134, 134)
+}
