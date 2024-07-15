@@ -42,3 +42,30 @@ body {
 .testoAggiuntivo {
     color: rgb(137, 134, 134)
 }
+
+a {
+    text-decoration: none;
+    color: rgb(55, 54, 54);
+    font-size: 0.8em;
+}
+
+.lingua {
+    font-size: 12px;
+}
+
+.bgFooter {
+    background-color: #F4F2EE;
+}
+
+.footer-copyright {
+    margin-top: 10px;
+
+}
+
+.footerBiglist {
+    font-size: 18px;
+}
+
+.listOne {
+    font-weight: 600;
+}

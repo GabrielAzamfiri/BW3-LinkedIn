@@ -1,9 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 import Analisi from "../components/Analisi";
 import Risorse from "../components/Risorse";
-import "./App.css";
 import Corsi from "../components/Corsi";
 import Progetti from "../components/Progetti";
+import Footer from "../components/Footer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Risorse />
       <Corsi />
       <Progetti />
+      <Footer />
     </>
   );
 }
