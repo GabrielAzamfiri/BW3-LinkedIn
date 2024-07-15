@@ -39,7 +39,7 @@ function Analisi() {
               </svg>
             </div>
             <div className="div3">
-              <p className="titolo">21 visualizzazioni del profilo.</p>
+              <p className="titolo">21 visualizzazioni del profilo</p>
               <p className="bodyText">Scorpi chi ha visto il tuo profilo.</p>
               <p className="testoAggiuntivo"></p>
             </div>

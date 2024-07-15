@@ -34,7 +34,7 @@ function Corsi() {
           </div>
         </Col>
         <hr></hr>
-        <Col md="12 d-flex justify-content-between mt-4">
+        <Col md="12 d-flex justify-content-between mt-3">
           <div className="div2 d-flex">
             <div className="icon">
               <svg
@@ -55,7 +55,6 @@ function Corsi() {
           </div>
         </Col>
         <hr></hr>
-
         <Col md="12 d-flex justify-content-between mt-4">
           <div className="div2 d-flex">
             <div className="icon">
