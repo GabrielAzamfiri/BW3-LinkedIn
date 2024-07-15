@@ -1,0 +1,6 @@
+#imgProfile {
+  transform: translate(30px, 150px);
+}
+#pencil:hover {
+  background-color: rgb(233, 237, 240);
+}

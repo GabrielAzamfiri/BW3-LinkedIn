@@ -1,9 +1,9 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
-import selectedSongReducer from "../reducers/selectedSongReducer";
+import myProfileReducer from "../reducers/myProfile";
 
 const rootReducer = combineReducers({
-  selectedSong: selectedSongReducer,
+  profile: myProfileReducer,
 });
 
 const store = configureStore({
