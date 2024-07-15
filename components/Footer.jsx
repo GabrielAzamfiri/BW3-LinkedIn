@@ -117,7 +117,7 @@ function Footer() {
                 <div className="col-md-2 mt-md-0 mt-3 ">
                   <h5 className="lingua">Seleziona la tua lingua</h5>
                   <Form.Select aria-label="Lingua" className="lingua">
-                    <option>Open this select menu</option>
+                    <option>Lingue</option>
                     <option value="1">日本語</option>
                     <option value="2">Italiano</option>
                     <option value="3">English</option>
@@ -132,6 +132,10 @@ function Footer() {
             </div>
           </footer>
         </Col>
+
+        {/* <div className="chat">
+          <p>prova</p>
+        </div> */}
       </Row>
     </Container>
   );

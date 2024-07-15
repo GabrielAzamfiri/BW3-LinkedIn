@@ -45,7 +45,7 @@ body {
 
 a {
     text-decoration: none;
-    color: rgb(55, 54, 54);
+    color: rgb(136, 134, 134);
     font-size: 0.8em;
 }
 
@@ -55,10 +55,16 @@ a {
 
 .bgFooter {
     background-color: #F4F2EE;
+    line-height: 8mm;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    letter-spacing: 0.5px;
+
 }
 
 .footer-copyright {
-    margin-top: 10px;
+    margin-top: 20px;
+
 
 }
 
@@ -68,4 +74,13 @@ a {
 
 .listOne {
     font-weight: 600;
+}
+
+
+/* Prova */
+
+.chat {
+    background-color: wheat;
+    border-radius: 15px;
+
 }
