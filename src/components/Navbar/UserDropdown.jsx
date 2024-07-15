@@ -15,9 +15,9 @@ const UserDropdown = ({ userInfo, handleLogout }) => {
       <div className="dropdown-profile">
         <div className="d-flex align-items-center">
           <Image src={userInfo.image} roundedCircle width="50" height="50" className="mr-3" />
-          <div> 
-            <strong> {userInfo.name} {userInfo.surname}</strong><br />
-            <span>{userInfo.bio}</span>
+          <div>
+            <strong>{userInfo.name} {userInfo.surname}</strong><br />
+            <span>{userInfo.title}</span>
           </div>
         </div>
         <NavDropdown.Divider />

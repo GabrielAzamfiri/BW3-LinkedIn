@@ -33,7 +33,7 @@ const LinkedInNavbar = () => {
   const handleLogout = () => {
     dispatch(setToken(null));
     dispatch(setUserInfo({}));
-    localStorage.removeItem('token'); // Rimuove il token da localStorage (sign out)
+    localStorage.removeItem('token');
   };
 
   return (
@@ -43,7 +43,7 @@ const LinkedInNavbar = () => {
           <Col xs={12} className="d-flex justify-content-between align-items-center">
             <Navbar.Brand href="#home">
               <img
-                src="/linkedin-logo.png" // Assicurati che il percorso sia corretto
+                src="/linkedin-logo.png" 
                 alt="LinkedIn Logo"
                 width="30"
                 height="30"

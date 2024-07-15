@@ -7,7 +7,40 @@
   font-size: 14px;
 }
 
-.search-button {
+/* .search-button {
   height: 30px;
   font-size: 14px;
+} */
+
+.search-bar-container {
+  position: relative;
+}
+
+/* src/components/Navbar/SearchBar.css */
+
+.search-bar-container {
+  position: relative;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.search-results .list-group-item {
+  display: flex;
+  align-items: center;
+}
+
+.search-results .list-group-item img {
+  margin-right: 10px;
+}
+
+.search-result-item {
+  cursor: pointer;
 }
