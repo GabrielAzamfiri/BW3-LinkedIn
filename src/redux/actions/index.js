@@ -1,34 +1,21 @@
-export const SELECT_SONG = "SELECT_SONG";
-export const CHANGE_INPUT_VALUE = "CHANGE_INPUT_VALUE";
+export const MY_PROFILE = "MY_PROFILE";
 
-export const selectSongAction = singleSong => ({ type: SELECT_SONG, payload: singleSong });
-export const changeInputValue = value => ({ type: CHANGE_INPUT_VALUE, payload: value });
+// export const myProfileAction = data => ({ type: MY_PROFILE, payload: data });
 
-export const getSongsAction = (artistName, actionType, typeDispatch) => {
-  return async (dispatch, getState) => {
-    console.log("GET STATE", getState()); // ritorna l'intero oggetto di stato globale
-
+export const myProfileAction = () => {
+  return async dispatch => {
     try {
-      const response = await fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=" + artistName);
+      const response = await fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
+        headers: {
+          // chiave di autenticazione
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk0Y2NmODE5NmQ3YjAwMTVkNmI1MjMiLCJpYXQiOjE3MjEwMjc4MzIsImV4cCI6MTcyMjIzNzQzMn0.bPE2_KluKpUL7tntcvUDLXOKht7ySvsZvq0ydXmbl3o",
+        },
+      });
       if (response.ok) {
-        let { data } = await response.json();
-        const arrSongs = [];
-        for (let index = 0; index < 4; index++) {
-          arrSongs.push(data[index]);
-        }
-        switch (actionType) {
-          case "homeDispatch":
-            dispatch({ type: typeDispatch, payload: arrSongs });
-            break;
-          case "searchDispatch":
-            dispatch({ type: typeDispatch, payload: data });
-            break;
+        let data = await response.json();
 
-          default:
-            break;
-        }
-
-        console.log("response", data); // ritorna l'intero oggetto di stato globale
+        dispatch({ type: MY_PROFILE, payload: data });
       } else {
         throw new Error("Errore nel erperimento dei dati 😥");
       }
