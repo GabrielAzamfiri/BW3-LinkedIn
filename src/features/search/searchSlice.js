@@ -1,16 +1,15 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-export const fetchSearchResults = createAsyncThunk("search/fetchSearchResults", async (query, { getState }) => {
-  const token = getState().user.token;
+export const fetchSearchResults = createAsyncThunk("search/fetchSearchResults", async query => {
   const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/`, {
     headers: {
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${import.meta.env.VITE_JOHN_KEY}`,
     },
   });
   const data = await response.json();
   const filteredResults = data
     .filter(
-      (profile) =>
+      profile =>
         (profile.name && profile.name.toLowerCase().includes(query.toLowerCase())) ||
         (profile.surname && profile.surname.toLowerCase().includes(query.toLowerCase())) ||
         (profile.title && profile.title.toLowerCase().includes(query.toLowerCase()))
@@ -32,9 +31,9 @@ const searchSlice = createSlice({
       state.query = action.payload;
     },
   },
-  extraReducers: (builder) => {
+  extraReducers: builder => {
     builder
-      .addCase(fetchSearchResults.pending, (state) => {
+      .addCase(fetchSearchResults.pending, state => {
         state.loading = true;
         state.error = null;
       })
