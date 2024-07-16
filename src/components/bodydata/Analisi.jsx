@@ -2,13 +2,13 @@ import "bootstrap/dist/css/bootstrap.css";
 import { Container } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import "../src/assets/analisi.css";
+import "../../assets/analisi.css";
 
-function Risorse() {
+function Analisi() {
   return (
     <Container className="container-fluid ">
       <Row className="d-flex justify-content-between align-middle border mt-3 px-3 pb-3 tabella">
-        <h4 className="mt-3">Risorse</h4>
+        <h4 className="mt-3">Analisi</h4>
         <div className="d-flex align-middle ml-3 mb-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -24,13 +24,13 @@ function Risorse() {
           <p className="d-flex mr-3 mb-3 sottotitolo">Solo per te</p>
         </div>
 
-        <Col md="12" className="justify-content-between mb-4">
+        <Col md="4" className="justify-content-between">
           <div className="div2 d-flex">
             <div className="icon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="25"
-                height="25"
+                width="16"
+                height="16"
                 fill="currentColor"
                 className="bi bi-people-fill"
                 viewBox="0 0 16 16"
@@ -39,16 +39,13 @@ function Risorse() {
               </svg>
             </div>
             <div className="div3">
-              <p className="titolo">La mia rete</p>
-              <p className="bodyText ">
-                Salva e gestisci i tuoi collegamenti e interessi.
-              </p>
+              <p className="titolo">21 visualizzazioni del profilo</p>
+              <p className="bodyText">Scorpi chi ha visto il tuo profilo.</p>
               <p className="testoAggiuntivo"></p>
             </div>
           </div>
         </Col>
-        <hr></hr>
-        <Col md="12 d-flex justify-content-between mt-4">
+        <Col md="4 d-flex justify-content-between">
           <div className="div2 d-flex">
             <div className="icon">
               <svg
@@ -56,23 +53,48 @@ function Risorse() {
                 width="25"
                 height="25"
                 fill="currentColor"
-                className="bi bi-bookmark-fill"
+                className="bi bi-bar-chart-fill"
                 viewBox="0 0 16 16"
               >
-                <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2" />
+                <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z" />
               </svg>
             </div>
             <div className="div3">
-              <p className="titolo">Elementi salvati</p>
+              <p className="titolo">60 impressioni del post</p>
               <p className="bodyText">
-                Monitora le tue offerte di lavoro, i corsi e gli articoli
+                Scorpi chi sta interagendo con il tuo profilo.
               </p>
+              <p className="sotto">Ultimi 7 giorni</p>
+              <p className="testoAggiuntivo"></p>
+            </div>
+          </div>
+        </Col>
+        <Col md="4 d-flex">
+          <div className="div2 d-flex">
+            <div className="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                fill="currentColor"
+                className="bi bi-search"
+                viewBox="0 0 16 16"
+              >
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+              </svg>
+            </div>
+            <div className="div3">
+              <p className="titolo">1 comparsa nei motori di ricerca</p>
+              <p className="body">
+                Vedi quante volte compari nei risultati di ricerca.
+              </p>
+              <p className="testoAggiuntivo"></p>
             </div>
           </div>
         </Col>
         <Col md="12" className="border-top mt-4">
           <p className=" text-center align-middle mt-3 ultimo">
-            Mostra tutte le risorse (4)
+            Mostra tutte le analisi
           </p>
         </Col>
       </Row>
@@ -80,4 +102,4 @@ function Risorse() {
   );
 }
 
-export default Risorse;
+export default Analisi;

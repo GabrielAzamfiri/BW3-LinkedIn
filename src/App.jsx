@@ -1,17 +1,16 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-// import "./App.css";
-
 import "./App.css";
 import { Col, Container, Row } from "react-bootstrap";
 import MainProfile from "./components/MainProfile";
 import AsideBar from "./components/AsideBar";
 import LinkedInNavbar from "./components/Navbar/Navbar";
-import Analisi from "../components/Analisi";
-import Risorse from "../components/Risorse";
-import Corsi from "../components/Corsi";
-import Progetti from "../components/Progetti";
-import Footer from "../components/Footer";
-import Esperienze from "../components/Esperienza";
+import Risorse from "./components/bodydata/Risorse";
+import Progetti from "./components/bodydata/Progetti";
+import Footer from "./components/bodydata/Footer";
+import Esperienze from "./components/bodydata/Esperienza";
+import Modalexp from "./components/bodydata/Modalexp";
+import Analisi from "./components/bodydata/Analisi";
+import Corsi from "./components/bodydata/Corsi";
 
 function App() {
   return (
@@ -23,10 +22,11 @@ function App() {
             <Row className=" mt-5">
               <Col xs={9}>
                 <MainProfile />
+                <Modalexp />
+                <Esperienze />
                 <Analisi />
                 <Risorse />
                 <Corsi />
-                <Esperienze />
                 <Progetti />
                 <Footer />
               </Col>
