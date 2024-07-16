@@ -3,7 +3,6 @@ import { Button, Card, Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { myProfileAction } from "../../redux/actions";
 import { Pencil, ShieldCheck } from "react-bootstrap-icons";
-import UploadFoto from "./UploadPhoto";
 
 const MainProfile = () => {
   const dispatch = useDispatch();
