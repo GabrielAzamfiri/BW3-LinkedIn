@@ -28,16 +28,16 @@ const MainProfile = () => {
             <Pencil className="fs-4  " />
           </Button>
         </div>
-        <img id="imgProfile" src={profile.image} alt="profile image" className="rounded-circle border border-5 border-white position-absolute" width={160} />
-        <Row className="pt-5 mt-4 px-4  ">
+        <img id="imgProfile" src={profile.image} alt="profile image" className="rounded-circle border border-5 border-white position-absolute" width={160} height={160} />
+        <Row className="pt-5  px-4  ">
           <Col xs={8}>
             <Card.Body className="lh-sm">
               <div className="d-flex">
-                <Card.Title className=" fs-3 ">
+                <Card.Title className=" fs-4 fw-bold">
                   {profile.name} {profile.surname}
                 </Card.Title>
 
-                <Button variant="btn btn-outline-primary " className="mx-2 rounded-pill d-flex align-items-center fw-bold ">
+                <Button variant="btn btn-outline-primary " className="mx-2 rounded-pill d-flex align-items-center  fw-bold ">
                   <ShieldCheck className="fs-5 me-2 fw-bold" /> Verifica ora
                 </Button>
               </div>
@@ -64,7 +64,7 @@ const MainProfile = () => {
             </a>
           </Col>
           <Col xs={12} className="mb-4">
-            <Button variant="primary" className="rounded-pill me-2 fw-bold ">
+            <Button variant="primary" className="rounded-pill me-2  fw-bold ">
               Disponibile per
             </Button>
             <Button variant="btn btn-outline-primary" className="me-2 rounded-pill fw-bold">

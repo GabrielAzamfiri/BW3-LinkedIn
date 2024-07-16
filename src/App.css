@@ -2,7 +2,7 @@ body {
   background-color: #f4f2ee;
 }
 #imgProfile {
-  transform: translate(30px, 150px);
+  transform: translate(30px, 110px);
 }
 #pencil:hover {
   background-color: rgb(233, 237, 240);

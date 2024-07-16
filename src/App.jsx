@@ -17,8 +17,8 @@ function App() {
       <LinkedInNavbar />
       <Container>
         <Row className="justify-content-center">
-          <Col>
-            <Row className=" mt-5">
+          <Col md={10}>
+            <Row className=" mt-3">
               <Col xs={9}>
                 <MainProfile />
                 <Esperienze />
