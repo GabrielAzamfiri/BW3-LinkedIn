@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const fetchSearchResults = createAsyncThunk("search/fetchSearchResults", async query => {
   const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/`, {
     headers: {
-      Authorization: `Bearer ${import.meta.env.VITE_JOHN_KEY}`,
+      Authorization: `Bearer ${import.meta.env.VITE_FETCH_KEY}`,
     },
   });
   const data = await response.json();

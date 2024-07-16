@@ -1,9 +1,13 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 import myProfileReducer from "../reducers/myProfile";
+import userReducer from "../../features/user/userSlice";
+import searchReducer from "../../features/search/searchSlice";
 
 const rootReducer = combineReducers({
   profile: myProfileReducer,
+  user: userReducer,
+  search: searchReducer,
 });
 
 const store = configureStore({

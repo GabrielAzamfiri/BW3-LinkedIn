@@ -1,4 +1,4 @@
-import { NavDropdown, Image } from 'react-bootstrap';
+import { NavDropdown, Image } from "react-bootstrap";
 
 const UserDropdown = ({ userInfo, handleLogout }) => {
   return (
@@ -10,13 +10,15 @@ const UserDropdown = ({ userInfo, handleLogout }) => {
         </div>
       }
       id="basic-nav-dropdown"
-      alignRight
     >
       <div className="dropdown-profile">
         <div className="d-flex align-items-center">
           <Image src={userInfo.image} roundedCircle width="50" height="50" className="mr-3" />
           <div>
-            <strong>{userInfo.name} {userInfo.surname}</strong><br />
+            <strong>
+              {userInfo.name} {userInfo.surname}
+            </strong>
+            <br />
             <span>{userInfo.title}</span>
           </div>
         </div>

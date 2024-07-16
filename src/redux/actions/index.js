@@ -8,8 +8,7 @@ export const myProfileAction = () => {
       const response = await fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
         headers: {
           // chiave di autenticazione
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk0Y2NmODE5NmQ3YjAwMTVkNmI1MjMiLCJpYXQiOjE3MjEwMjc4MzIsImV4cCI6MTcyMjIzNzQzMn0.bPE2_KluKpUL7tntcvUDLXOKht7ySvsZvq0ydXmbl3o",
+          Authorization: `Bearer ${import.meta.env.VITE_FETCH_KEY}`,
         },
       });
       if (response.ok) {
