@@ -8,7 +8,6 @@ import Risorse from "./components/bodydata/Risorse";
 import Progetti from "./components/bodydata/Progetti";
 import Footer from "./components/bodydata/Footer";
 import Esperienze from "./components/bodydata/Esperienza";
-import Modalexp from "./components/bodydata/Modalexp";
 import Analisi from "./components/bodydata/Analisi";
 import Corsi from "./components/bodydata/Corsi";
 
@@ -22,7 +21,6 @@ function App() {
             <Row className=" mt-5">
               <Col xs={9}>
                 <MainProfile />
-                <Modalexp />
                 <Esperienze />
                 <Analisi />
                 <Risorse />
