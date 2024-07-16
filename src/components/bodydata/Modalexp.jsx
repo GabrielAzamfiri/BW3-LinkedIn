@@ -2,12 +2,59 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
+import { useSelector } from "react-redux";
 
 function Modalexp() {
   const [show, setShow] = useState(false);
 
+  const [experiences, setExperiences] = useState({
+    role: "",
+    company: "",
+    startDate: "",
+    endDate: "",
+    description: "",
+    area: "",
+  });
+
+  const myExperienceAction = () => {
+    fetch(
+      `https://striveschool-api.herokuapp.com/api/profile/${Profile._id}/experiences`,
+      {
+        method: "POST",
+        body: JSON.stringify(experiences),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${import.meta.env.VITE_FETCH_KEY}`,
+        },
+      }
+    )
+      .then((resp) => {
+        if (resp.ok) {
+          return resp.json();
+        } else {
+          throw new Error("Errore nel reperimento dei dati");
+        }
+      })
+      .then((deletedresp) => {
+        console.log(deletedresp);
+      })
+      .catch((Error) => {
+        console.log(Error);
+      });
+  };
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const Data = Object.fromEntries(formData);
+    console.log("DATA", Data);
+    Profile && myExperienceAction(Profile._id, formData);
+  };
+
+  const Profile = useSelector((state) => state.profile.profile);
 
   return (
     <>
@@ -30,48 +77,87 @@ function Modalexp() {
           <Modal.Title>Aggiungi esperienza</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form onSubmit={(e) => handleSubmit(e)}>
             <Form.Group className="mb-3" controlId="exampleForm.role">
               <Form.Label>Role</Form.Label>
-              <Form.Control as="textarea" rows={1} />
+              <Form.Control
+                onChange={(e) =>
+                  setExperiences({ ...experiences, role: e.target.value })
+                }
+                name="role"
+                as="textarea"
+                rows={1}
+              />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="exampleForm.company">
               <Form.Label>Company</Form.Label>
-              <Form.Control as="textarea" rows={1} />
+              <Form.Control
+                onChange={(e) =>
+                  setExperiences({ ...experiences, company: e.target.value })
+                }
+                name="company"
+                as="textarea"
+                rows={1}
+              />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="exampleForm.startDate">
               <Form.Label>Start Date</Form.Label>
-              <Form.Control as="textarea" rows={1} />
+              <Form.Control
+                onChange={(e) =>
+                  setExperiences({ ...experiences, startDate: e.target.value })
+                }
+                name="startDate"
+                type="date"
+                rows={1}
+              />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="exampleForm.endDate">
               <Form.Label>End Date</Form.Label>
-              <Form.Control as="textarea" rows={1} />
+              <Form.Control
+                onChange={(e) =>
+                  setExperiences({ ...experiences, endDate: e.target.value })
+                }
+                name="endDate"
+                type="date"
+                rows={1}
+              />
             </Form.Group>
-            <p>Ancora in corso</p>
-            <Form.Check aria-label="option 1" />
 
             <Form.Group className="mb-3" controlId="exampleForm.Description">
               <Form.Label>Description</Form.Label>
-              <Form.Control as="textarea" rows={4} />
+              <Form.Control
+                onChange={(e) =>
+                  setExperiences({
+                    ...experiences,
+                    description: e.target.value,
+                  })
+                }
+                name="dscription"
+                as="textarea"
+                rows={4}
+              />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="exampleForm.area">
               <Form.Label>Area</Form.Label>
-              <Form.Control as="textarea" rows={1} />
+              <Form.Control
+                onChange={(e) =>
+                  setExperiences({ ...experiences, area: e.target.value })
+                }
+                name="area"
+                as="textarea"
+                rows={1}
+              />
             </Form.Group>
+            <Button variant="primary" type="submit">
+              Salva
+            </Button>
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
+        <Modal.Footer></Modal.Footer>
       </Modal>
     </>
   );
