@@ -13,27 +13,27 @@ const MainProfile = () => {
   const profile = useSelector(state => state.profile.profile);
   return (
     profile && (
-      <Card className=" position-relative mt-5 rounded">
+      <Card className=" position-relative rounded">
         <div className="position-relative">
           <Card.Img
             className="object-fit-cover  "
-            height={250}
+            height={220}
             variant="top"
             src="https://media.licdn.com/dms/image/C5616AQHZGvVazLoGBQ/profile-displaybackgroundimage-shrink_350_1400/0/1654694401780?e=1726704000&v=beta&t=E73F_BUro83tkJ8NOckNJsjctaqUGwTbU-ejLx0WFLo"
           />
           <Button id="pencil" variant="transparent" className="rounded-circle bg-white position-absolute top-0 end-0 d-flex align-items-center justify-content-center me-4 mt-4 py-3">
-            <Pencil className="fs-4" />
+            <Pencil className="fs-5 " fill="blue" />
           </Button>
           <Button id="pencil" variant="transparent" className="rounded-circle h-25 position-absolute top-100 end-0 d-flex align-items-center justify-content-center me-4 mt-4 ">
-            <Pencil className="fs-2  " />
+            <Pencil className="fs-4  " />
           </Button>
         </div>
-        <img id="imgProfile" src={profile.image} alt="profile image" className="rounded-circle border border-5 border-white position-absolute" width={200} />
-        <Row className="pt-5 mt-5 px-4  ">
-          <Col>
-            <Card.Body>
+        <img id="imgProfile" src={profile.image} alt="profile image" className="rounded-circle border border-5 border-white position-absolute" width={160} />
+        <Row className="pt-5 mt-4 px-4  ">
+          <Col xs={8}>
+            <Card.Body className="lh-sm">
               <div className="d-flex">
-                <Card.Title className=" fs-2 ">
+                <Card.Title className=" fs-3 ">
                   {profile.name} {profile.surname}
                 </Card.Title>
 
@@ -43,7 +43,7 @@ const MainProfile = () => {
               </div>
               <Card.Text> {profile.title}</Card.Text>
               <Card.Text>
-                <span className="opacity-75 me-3 lead"> {profile.area}</span>
+                <span className="opacity-75 me-3 lead fs-6"> {profile.area}</span>
                 <a className="fw-bold link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">
                   Informazioni di contatto
                 </a>
@@ -55,9 +55,9 @@ const MainProfile = () => {
             </Card.Body>
           </Col>
 
-          <Col className="d-flex mt-4 align-items-center justify-content-end ">
+          <Col xs={4} className="d-flex mt-4 align-items-center justify-content-end ">
             <a href="https://www.linkedin.com/school/epicodeitalia/" className="btn">
-              <img src="src\assets\epicodeschool_logo.jpg" alt="logo Epico" width={80} />
+              <img src="src\assets\epicodeschool_logo.jpg" alt="logo Epico" width={60} />
               <span className="lh-sm">
                 <strong>EPICODE</strong>
               </span>

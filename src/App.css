@@ -1,3 +1,6 @@
+body {
+  background-color: #f4f2ee;
+}
 #imgProfile {
   transform: translate(30px, 150px);
 }
