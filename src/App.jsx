@@ -1,8 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { Col, Container, Row } from "react-bootstrap";
-import MainProfile from "./components/MainProfile";
-import AsideBar from "./components/AsideBar";
+import MainProfile from "./components/MainInfo-AsideBar/MainProfile";
+import AsideBar from "./components/MainInfo-AsideBar/AsideBar";
 import LinkedInNavbar from "./components/Navbar/Navbar";
 import Risorse from "./components/bodydata/Risorse";
 import Progetti from "./components/bodydata/Progetti";
