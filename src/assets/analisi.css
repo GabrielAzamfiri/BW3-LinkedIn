@@ -84,3 +84,11 @@ a {
     border-radius: 15px;
 
 }
+
+.line {
+    display: inline-block;
+}
+
+.addButton {
+    margin-left: 12px;
+}
