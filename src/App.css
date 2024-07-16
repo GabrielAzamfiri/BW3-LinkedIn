@@ -7,3 +7,6 @@ body {
 #pencil:hover {
   background-color: rgb(233, 237, 240);
 }
+.Mostratutti:hover {
+  background-color: #eaf5f3 !important;
+}

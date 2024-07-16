@@ -19,7 +19,7 @@ function App() {
         <Row className="justify-content-center">
           <Col md={10}>
             <Row className=" mt-3">
-              <Col xs={9}>
+              <Col>
                 <MainProfile />
                 <Esperienze />
                 <Analisi />

@@ -37,7 +37,7 @@ const MainProfile = () => {
                   {profile.name} {profile.surname}
                 </Card.Title>
 
-                <Button variant="btn btn-outline-primary " className="mx-2 rounded-pill d-flex align-items-center  fw-bold ">
+                <Button variant="btn btn-outline-primary " className="mx-2 p-0 px-3 rounded-pill d-flex align-items-center  fw-bold ">
                   <ShieldCheck className="fs-5 me-2 fw-bold" /> Verifica ora
                 </Button>
               </div>
@@ -64,16 +64,16 @@ const MainProfile = () => {
             </a>
           </Col>
           <Col xs={12} className="mb-4">
-            <Button variant="primary" className="rounded-pill me-2  fw-bold ">
+            <Button variant="primary" className="rounded-pill me-2 py-1 px-3  fw-bold ">
               Disponibile per
             </Button>
-            <Button variant="btn btn-outline-primary" className="me-2 rounded-pill fw-bold">
+            <Button variant="btn btn-outline-primary" className="me-2 py-1 px-3  rounded-pill fw-bold">
               Aggiungi sezione del profilo
             </Button>
-            <Button variant="btn btn-outline-primary" className="me-2 rounded-pill fw-bold">
+            <Button variant="btn btn-outline-primary" className="me-2 py-1 px-3 rounded-pill fw-bold">
               Migliora profilo
             </Button>
-            <Button variant="btn btn-outline-dark" className="me-2 rounded-pill fw-bold">
+            <Button variant="btn btn-outline-dark" className="me-2 py-1 px-3 rounded-pill fw-bold">
               Altro
             </Button>
           </Col>

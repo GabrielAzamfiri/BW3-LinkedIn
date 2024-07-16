@@ -38,8 +38,8 @@ const LinkedInNavbar = () => {
     userInfo && (
       <Navbar bg="light" expand="lg" className="px-3">
         <Container>
-          <Row className="w-100">
-            <Col xs={12} className="d-flex justify-content-between align-items-center">
+          <Row className="w-100 justify-content-center">
+            <Col xs={10} className="d-flex justify-content-between align-items-center">
               <Navbar.Brand href="#home">
                 <img src="/linkedin-logo.png" alt="LinkedIn Logo" width="30" height="30" className="d-inline-block align-top" />
               </Navbar.Brand>

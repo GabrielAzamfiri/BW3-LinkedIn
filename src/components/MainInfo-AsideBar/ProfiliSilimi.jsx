@@ -2,6 +2,7 @@ import { Col } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import Profili from "./Profili";
 import { SendFill } from "react-bootstrap-icons";
+import MostraTutti from "./MostraTutti";
 
 const ProfiliSimili = () => {
   const profiliSimili = useSelector(state => state.epicProfiles.profiliSimili);
@@ -15,13 +16,15 @@ const ProfiliSimili = () => {
         return (
           <>
             <Profili epicProfile={epicProfile} key={epicProfile._id} />
-            <button className="m-auto mt-1 py-1 px-2 rounded-pill  btn btn-outline-dark d-block">
-              <SendFill /> Messaggio
+            <button className="m-auto mt-1 py-1 px-2 rounded-pill  btn btn-outline-dark d-block d-flex align-items-center justify-content-center">
+              <SendFill className="me-2" /> Messaggio
             </button>
             <hr />
           </>
         );
       })}
+
+      <MostraTutti />
     </Col>
   );
 };
