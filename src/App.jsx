@@ -3,8 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./App.css";
 import { Col, Container, Row } from "react-bootstrap";
-import MainProfile from "./components/MainProfile";
-import AsideBar from "./components/AsideBar";
+import MainProfile from "./components/MainInfo-AsideBar/MainProfile";
+import AsideBar from "./components/MainInfo-AsideBar/AsideBar";
 import LinkedInNavbar from "./components/Navbar/Navbar";
 import Analisi from "../components/Analisi";
 import Risorse from "../components/Risorse";

@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { myProfileAction } from "../redux/actions";
+import { myProfileAction } from "../../redux/actions";
 import { Pencil, ShieldCheck } from "react-bootstrap-icons";
+import UploadFoto from "./UploadPhoto";
 
 const MainProfile = () => {
   const dispatch = useDispatch();
@@ -44,11 +45,11 @@ const MainProfile = () => {
               <Card.Text> {profile.title}</Card.Text>
               <Card.Text>
                 <span className="opacity-75 me-3 lead fs-6"> {profile.area}</span>
-                <a className="fw-bold link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">
+                <a className="fw-bold text-primary fs-6 link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">
                   Informazioni di contatto
                 </a>
                 <br />
-                <a className="fw-bold link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">
+                <a className="fw-bold text-primary fs-6 link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">
                   171 collegamenti
                 </a>
               </Card.Text>
