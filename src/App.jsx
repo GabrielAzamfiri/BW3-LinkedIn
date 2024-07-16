@@ -6,6 +6,13 @@ import { Col, Container, Row } from "react-bootstrap";
 import MainProfile from "./components/MainProfile";
 import AsideBar from "./components/AsideBar";
 import LinkedInNavbar from "./components/Navbar/Navbar";
+import Analisi from "../components/Analisi";
+import Risorse from "../components/Risorse";
+import Corsi from "../components/Corsi";
+import Progetti from "../components/Progetti";
+import Footer from "../components/Footer";
+import Esperienze from "../components/Esperienza";
+
 function App() {
   return (
     <>
@@ -16,6 +23,12 @@ function App() {
             <Row className=" mt-5">
               <Col xs={9}>
                 <MainProfile />
+                <Analisi />
+                <Risorse />
+                <Corsi />
+                <Esperienze />
+                <Progetti />
+                <Footer />
               </Col>
               <Col xs={3}>
                 <AsideBar />
