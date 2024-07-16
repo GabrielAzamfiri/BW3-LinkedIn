@@ -15,7 +15,7 @@ function Analisi() {
             width="20"
             height="20"
             fill="currentColor"
-            class="bi bi-eye-fill"
+            className="bi bi-eye-fill"
             viewBox="0 0 16 16"
           >
             <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
@@ -32,7 +32,7 @@ function Analisi() {
                 width="16"
                 height="16"
                 fill="currentColor"
-                class="bi bi-people-fill"
+                className="bi bi-people-fill"
                 viewBox="0 0 16 16"
               >
                 <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
@@ -53,7 +53,7 @@ function Analisi() {
                 width="25"
                 height="25"
                 fill="currentColor"
-                class="bi bi-bar-chart-fill"
+                className="bi bi-bar-chart-fill"
                 viewBox="0 0 16 16"
               >
                 <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z" />
@@ -77,7 +77,7 @@ function Analisi() {
                 width="25"
                 height="25"
                 fill="currentColor"
-                class="bi bi-search"
+                className="bi bi-search"
                 viewBox="0 0 16 16"
               >
                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
