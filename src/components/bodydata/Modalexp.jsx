@@ -8,7 +8,7 @@ import { profileEsperienzeAction } from "../../redux/actions";
 
 function Modalexp({ title, experience }) {
   const [show, setShow] = useState(false);
-  const put = title === "Modifica Esperienza" ? true : false;
+  const put = title === "Modifica Esperienza";
   const dispatch = useDispatch();
 
   const [experiences, setExperiences] = useState({
@@ -38,6 +38,7 @@ function Modalexp({ title, experience }) {
       })
       .then(deletedresp => {
         console.log(deletedresp);
+        dispatch(profileEsperienzeAction(Profile._id));
       })
       .catch(Error => {
         console.log(Error);
@@ -61,6 +62,7 @@ function Modalexp({ title, experience }) {
       })
       .then(modifyResp => {
         console.log(modifyResp);
+        dispatch(profileEsperienzeAction(Profile._id));
       })
       .catch(Error => {
         console.log(Error);
@@ -79,14 +81,13 @@ function Modalexp({ title, experience }) {
 
       .then(resp => {
         if (resp.ok) {
-          return resp.json();
+          console.log(resp);
+          dispatch(profileEsperienzeAction(Profile._id));
         } else {
           throw `Errore ${resp.status} : ${resp.statusText} `;
         }
       })
-      .then(deletedresp => {
-        console.log(deletedresp);
-      })
+
       .catch(err => alert(err));
   };
 
@@ -97,7 +98,6 @@ function Modalexp({ title, experience }) {
     e.preventDefault();
     if (put) {
       modifyExperienceAction();
-      dispatch(profileEsperienzeAction(Profile._id));
       handleClose();
     } else {
       Profile && myExperienceAction();
