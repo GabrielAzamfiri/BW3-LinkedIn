@@ -10,3 +10,155 @@ body {
 .Mostratutti:hover {
   background-color: #eaf5f3 !important;
 }
+
+/* for business css */
+.dropdown-menu-wide {
+  width: 600px;
+}
+
+.dropdown-header {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.me-2 {
+  margin-right: 0.5rem;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav .nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.navbar-nav .dropdown-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.custom-navbar {
+  height: 50px;
+}
+
+.custom-navbar .navbar-brand img {
+  max-height: 100%;
+}
+
+.custom-navbar .navbar-nav .nav-link,
+.custom-navbar .navbar-nav .dropdown-toggle {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.custom-navbar .navbar-collapse {
+  align-items: center;
+}
+
+/* .custom-dropdown-toggle::after {
+  display: none !important;
+} */
+
+.vertical-separator {
+  height: 50px;
+  width: 1px;
+  background-color: #ccc;
+  margin: 0 10px;
+}
+
+/* css per le ricerche recente */
+.search-results {
+  position: absolute;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+}
+
+.recent-searches-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.recent-searches-header span {
+  font-weight: bold;
+}
+
+.recent-search-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.recent-search-item img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* pulsante "X" per cancellare il testo nella barra di ricerca */
+.search-bar-container {
+  position: relative;
+}
+
+.search-bar .form-control {
+  padding-right: 30px;
+}
+
+.clear-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #aaa;
+}
+
+.search-results {
+  position: absolute;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+}
+
+.recent-searches-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.recent-searches-header span {
+  font-weight: bold;
+}
+
+.recent-search-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.recent-search-item img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}

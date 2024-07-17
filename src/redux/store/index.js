@@ -2,8 +2,8 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 import myProfileReducer from "../reducers/myProfile";
 import epicProfilesReducer from "../reducers/epicProfilesReducer";
-import userReducer from "../../features/user/userSlice";
-import searchReducer from "../../features/search/searchSlice";
+import searchReducer from "../reducers/searchReducer";
+import userReducer from "../reducers/userReducer";
 
 const rootReducer = combineReducers({
   profile: myProfileReducer,

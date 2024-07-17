@@ -1,5 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Col, Container, Row } from "react-bootstrap";
 import MainProfile from "./components/MainInfo-AsideBar/MainProfile";
 import AsideBar from "./components/MainInfo-AsideBar/AsideBar";
@@ -10,15 +12,25 @@ import Footer from "./components/bodydata/Footer";
 import Esperienze from "./components/bodydata/Esperienza";
 import Analisi from "./components/bodydata/Analisi";
 import Corsi from "./components/bodydata/Corsi";
+import { fetchUserInfo } from "./redux/actions";
 
 function App() {
+  const dispatch = useDispatch();
+  const token = useSelector(state => state.profile.token);
+
+  useEffect(() => {
+    if (token) {
+      dispatch(fetchUserInfo());
+    }
+  }, [token, dispatch]);
+
   return (
     <>
       <LinkedInNavbar />
       <Container>
         <Row className="justify-content-center">
           <Col md={10}>
-            <Row className=" mt-3">
+            <Row className="mt-3">
               <Col>
                 <MainProfile />
                 <Esperienze />

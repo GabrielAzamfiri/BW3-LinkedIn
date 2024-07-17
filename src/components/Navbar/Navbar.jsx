@@ -1,32 +1,14 @@
 import { useSelector, useDispatch } from "react-redux";
 import { Navbar, Nav, Container, Row, Col } from "react-bootstrap";
-import { setToken, setUserInfo } from "../../features/user/userSlice";
+import { setToken, setUserInfo } from "../../redux/actions";
 import SearchBar from "./SearchBar";
 import NavLinks from "./NavLinks";
 import UserDropdown from "./UserDropdown";
+import ForBusinessDropdown from "./ForBusinessDropdown";
 
 const LinkedInNavbar = () => {
   const userInfo = useSelector(state => state.profile.profile);
   const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   const fetchUserInfo = async () => {
-  //     try {
-  //       const response = await fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
-  //         headers: {
-  //           Authorization: `Bearer ${import.meta.env.VITE_JOHN_KEY}`,
-  //         },
-  //       });
-  //       const data = await response.json();
-  //       dispatch(setUserInfo(data));
-  //     } catch (error) {
-  //       console.error("Failed to fetch user info:", error);
-  //     }
-  //   };
-  //   fetchUserInfo();
-
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
 
   const handleLogout = () => {
     dispatch(setToken(null));
@@ -36,7 +18,7 @@ const LinkedInNavbar = () => {
 
   return (
     userInfo && (
-      <Navbar bg="light" expand="lg" className="px-3">
+      <Navbar bg="light" expand="lg" className="px-3 custom-navbar">
         <Container>
           <Row className="w-100 justify-content-center">
             <Col xs={10} className="d-flex justify-content-between align-items-center">
@@ -46,9 +28,17 @@ const LinkedInNavbar = () => {
               <SearchBar />
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="ms-auto d-flex align-items-center">
+                <Nav className="ms-auto navbar-nav">
                   <NavLinks />
-                  {userInfo.image ? <UserDropdown userInfo={userInfo} handleLogout={handleLogout} /> : <Nav.Link href="#login">Login</Nav.Link>}
+                  {userInfo.image ? (
+                    <>
+                      <UserDropdown userInfo={userInfo} handleLogout={handleLogout} />
+                      <div className="vertical-separator"></div>
+                      <ForBusinessDropdown />
+                    </>
+                  ) : (
+                    <Nav.Link href="#login">Login</Nav.Link>
+                  )}
                 </Nav>
               </Navbar.Collapse>
             </Col>
