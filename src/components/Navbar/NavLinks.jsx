@@ -1,13 +1,14 @@
-import { Nav } from 'react-bootstrap';
-import { FaHome, FaUsers, FaBriefcase, FaComments, FaBell } from 'react-icons/fa';
+import { Nav } from "react-bootstrap";
+import { FaHome, FaUsers, FaBriefcase, FaComments, FaBell } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const NavLinks = () => {
   return (
     <>
-      <Nav.Link href="#home" className="d-flex flex-column align-items-center">
+      <Link to="/Home" className="nav-link d-flex flex-column align-items-center">
         <FaHome />
         <span>Home</span>
-      </Nav.Link>
+      </Link>
       <Nav.Link href="#network" className="d-flex flex-column align-items-center">
         <FaUsers />
         <span>My Network</span>

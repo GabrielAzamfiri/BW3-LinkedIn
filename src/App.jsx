@@ -15,8 +15,8 @@ function App() {
           <Row className="justify-content-center">
             <Col md={10}>
               <Routes>
-                <Route path="/" element={<PostIndex />} />
-                <Route path="/Profile" element={<MyProfile />} />
+                <Route path="/Home" element={<PostIndex />} />
+                <Route path="/" element={<MyProfile />} />
               </Routes>
             </Col>
           </Row>
