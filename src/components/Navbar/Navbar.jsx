@@ -5,6 +5,7 @@ import SearchBar from "./SearchBar";
 import NavLinks from "./NavLinks";
 import UserDropdown from "./UserDropdown";
 import ForBusinessDropdown from "./ForBusinessDropdown";
+import { Link } from "react-router-dom";
 
 const LinkedInNavbar = () => {
   const userInfo = useSelector(state => state.profile.profile);
@@ -22,9 +23,9 @@ const LinkedInNavbar = () => {
         <Container>
           <Row className="w-100 justify-content-center">
             <Col xs={10} className="d-flex justify-content-between align-items-center">
-              <Navbar.Brand href="#home">
+              <Link to={"/"} className="navbar-brand">
                 <img src="/linkedin-logo.png" alt="LinkedIn Logo" width="30" height="30" className="d-inline-block align-top" />
-              </Navbar.Brand>
+              </Link>
               <SearchBar />
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
