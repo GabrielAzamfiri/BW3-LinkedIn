@@ -2,6 +2,7 @@ import NewsSideLeft from "./NewsSideLeft";
 import NewsSideRight from "./NewsSideRight";
 import NewsPost from "./NewsPost";
 import { Col, Container, Row } from "react-bootstrap";
+import CreatePost from "./CreatePost";
 
 function PostIndex() {
   return (
@@ -12,6 +13,7 @@ function PostIndex() {
             <NewsSideLeft />
           </Col>
           <Col md={6}>
+            <CreatePost />
             <NewsPost />
           </Col>
           <Col md={3}>

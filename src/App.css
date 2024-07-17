@@ -53,7 +53,7 @@ body {
 .nslAvatar {
   background-color: #fff;
   border-radius: 50%;
-  padding: 10px;
+  padding: 2px;
   position: absolute;
   bottom: -30px;
   width: 60px;
@@ -94,13 +94,14 @@ body {
   border-bottom: 1px solid #e0e0e0;
 
   padding: 20px;
-
-
 }
+
+
 
 .nslSection p {
   margin: 0;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .nslSection a {
@@ -114,13 +115,15 @@ body {
 
 .nslSection .icon {
   float: right;
-  vertical-align: top;
+  /* vertical-align: top; */
+  margin-top: -4px;
 }
 
 .nslSection .icon2 {
   float: left;
   font-size: 18px;
   margin-right: 10px;
+  margin-top: -5px;
 
 }
 
@@ -169,6 +172,7 @@ body {
 
 .nsrCard-header .icon {
   font-size: 16px;
+  margin-top: -7px;
 }
 
 .nsrCard-content {
@@ -365,6 +369,7 @@ body {
 .postLike {
   margin-right: 5px;
   color: black;
+
 }
 
 
@@ -393,7 +398,77 @@ body {
   letter-spacing: -0.5px;
 }
 
-
-
-
 /* ------------------- --------END-POST-------- ------------------------ */
+
+
+
+
+
+
+
+/* ------------------- --------START CREATE POST-------- ------------------------ */
+
+
+
+
+
+
+.createPost-container {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.createPost-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.createPost-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.createPost-input input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+.createPost-options {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.option-createPost {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.option-createPost img {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.option-createPost span {
+  font-size: 14px;
+  color: #555;
+}
+
+
+
+
+
+/* ------------------- --------END CREATE POST-------- ------------------------ */
