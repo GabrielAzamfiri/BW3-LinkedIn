@@ -8,14 +8,14 @@ import { profileEsperienzeAction } from "../../redux/actions";
 
 function Modalexp({ title, experience }) {
   const [show, setShow] = useState(false);
-  const put = title === "Modifica Esperienza" ? true : false;
+  const put = title === "Modifica Esperienza";
   const dispatch = useDispatch();
 
   const [experiences, setExperiences] = useState({
     role: "",
     company: "",
     startDate: "",
-    endDate: null,
+    endDate: "",
     description: "",
     area: "",
   });
@@ -38,6 +38,7 @@ function Modalexp({ title, experience }) {
       })
       .then(deletedresp => {
         console.log(deletedresp);
+        dispatch(profileEsperienzeAction(Profile._id));
       })
       .catch(Error => {
         console.log(Error);
@@ -61,6 +62,7 @@ function Modalexp({ title, experience }) {
       })
       .then(modifyResp => {
         console.log(modifyResp);
+        dispatch(profileEsperienzeAction(Profile._id));
       })
       .catch(Error => {
         console.log(Error);
@@ -79,14 +81,13 @@ function Modalexp({ title, experience }) {
 
       .then(resp => {
         if (resp.ok) {
-          return resp.json();
+          console.log(resp);
+          dispatch(profileEsperienzeAction(Profile._id));
         } else {
           throw `Errore ${resp.status} : ${resp.statusText} `;
         }
       })
-      .then(deletedresp => {
-        console.log(deletedresp);
-      })
+
       .catch(err => alert(err));
   };
 
@@ -97,7 +98,6 @@ function Modalexp({ title, experience }) {
     e.preventDefault();
     if (put) {
       modifyExperienceAction();
-      dispatch(profileEsperienzeAction(Profile._id));
       handleClose();
     } else {
       Profile && myExperienceAction();
@@ -143,27 +143,12 @@ function Modalexp({ title, experience }) {
 
             <Form.Group className="mb-3" controlId="exampleForm.startDate">
               <Form.Label>Start Date</Form.Label>
-              <Form.Control
-                min={new Date().toISOString().slice(0, 10)}
-                onChange={e => setExperiences({ ...experiences, startDate: e.target.value })}
-                value={experiences.startDate}
-                name="startDate"
-                type="date"
-                rows={1}
-                required
-              />
+              <Form.Control onChange={e => setExperiences({ ...experiences, startDate: e.target.value })} value={experiences.startDate.slice(0, 10)} name="startDate" type="date" rows={1} required />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="exampleForm.endDate">
               <Form.Label>End Date</Form.Label>
-              <Form.Control
-                min={new Date().toISOString().split(".")[0].slice(0, -3)}
-                onChange={e => setExperiences({ ...experiences, endDate: e.target.value })}
-                value={experiences.endDate}
-                name="endDate"
-                type="date"
-                rows={1}
-              />
+              <Form.Control onChange={e => setExperiences({ ...experiences, endDate: e.target.value })} value={experiences.endDate.slice(0, 10)} name="endDate" type="date" rows={1} />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="exampleForm.Description">
@@ -178,7 +163,7 @@ function Modalexp({ title, experience }) {
                 value={experiences.description}
                 name="description"
                 as="textarea"
-                rows={4}
+                rows={2}
                 required
               />
             </Form.Group>
