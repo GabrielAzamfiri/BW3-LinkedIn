@@ -56,8 +56,7 @@ function NewsSideRight() {
           <a href="#">Scarica l app LinkedIn</a> •<a href="#">Altro</a>
           <p>
             {" "}
-            <img src="../../../public/linkedin.svg"></img> LinkedIn Corporation
-            © 2024
+            <img src="/linkedin.svg"></img> LinkedIn Corporation © 2024
           </p>
         </div>
       </div>

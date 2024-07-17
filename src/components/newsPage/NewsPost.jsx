@@ -6,11 +6,10 @@ function NewsPost() {
       <div className="postCard">
         <div className="postCard-header">
           <div className="postProfile">
-            <img
-              src="../../public/epi.jpg"
-              alt="EPICODE Logo"
-              className="logo"
-            />
+            <a href="#">
+              {" "}
+              <img src="/epi.jpg" alt="EPICODE Logo" className="logo" />
+            </a>
             <div className="postProfile-info">
               <h3>EPICODE</h3>
               <p className="postMarginRight">16.385 follower </p>
@@ -35,7 +34,9 @@ function NewsPost() {
             <a href="#" className="postFollow postMarginRight">
               Segui
             </a>
-            <span className="postMore">...</span>
+            <a href="#" className="postMore">
+              ...
+            </a>
           </div>
         </div>
         <div className="postCard-content">

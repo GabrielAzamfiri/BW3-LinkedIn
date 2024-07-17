@@ -11,7 +11,7 @@ function NewsSideLeft() {
         </div>
         <div className="nslContent">
           <h2>Christian Tripodi</h2>
-          <p>Web developer presso</p>
+          <p>Soundtrack Composer presso Sony Records</p>
         </div>
         <div className="nslFooter">
           <div className="nslSection">

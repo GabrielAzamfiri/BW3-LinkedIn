@@ -10,9 +10,6 @@ import Footer from "./components/bodydata/Footer";
 import Esperienze from "./components/bodydata/Esperienza";
 import Analisi from "./components/bodydata/Analisi";
 import Corsi from "./components/bodydata/Corsi";
-import NewsSideLeft from "./components/newsPage/NewsSideLeft";
-import NewsSideRight from "./components/newsPage/NewsSideRight";
-import NewsPost from "./components/newsPage/NewsPost";
 
 function App() {
   return (
@@ -23,9 +20,6 @@ function App() {
           <Col md={10}>
             <Row className=" mt-3">
               <Col>
-                <NewsPost />
-                <NewsSideLeft />
-                <NewsSideRight />
                 <MainProfile />
                 <Esperienze />
                 <Analisi />
