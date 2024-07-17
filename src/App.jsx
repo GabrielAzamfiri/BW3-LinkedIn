@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { Col, Container, Row } from "react-bootstrap";
-
+import PostIndex from "./components/newsPage/PostIndex";
 import LinkedInNavbar from "./components/Navbar/Navbar";
 import MyProfile from "./components/MyProfile";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -15,7 +15,8 @@ function App() {
           <Row className="justify-content-center">
             <Col md={10}>
               <Routes>
-                <Route path="/" element={<MyProfile />} />
+                <Route path="/" element={<PostIndex />} />
+                <Route path="/Profile" element={<MyProfile />} />
               </Routes>
             </Col>
           </Row>

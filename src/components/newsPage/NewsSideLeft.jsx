@@ -1,17 +1,25 @@
+import { Link } from "react-router-dom";
 import "../../../src/App.css";
+import { useSelector } from "react-redux";
 
 function NewsSideLeft() {
+  const Profile = useSelector((state) => state.profile.profile);
   return (
     <>
       <div className="newsSideLeftCard">
         <div className="nslHeader">
           <div className="nslAvatar">
-            <img src="camera-icon.png" alt="Profile Picture" />
+            <img src={Profile.image} alt="Profile Picture" />
           </div>
         </div>
         <div className="nslContent">
-          <h2>Christian Tripodi</h2>
-          <p>Soundtrack Composer presso Sony Records</p>
+          <Link
+            className="text-dark fw-bold link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+            to={"/Profile"}
+          >
+            {Profile.name} {Profile.surname}
+          </Link>
+          <p>{Profile.title}</p>
         </div>
         <div className="nslFooter">
           <div className="nslSection">

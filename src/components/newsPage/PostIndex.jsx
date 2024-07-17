@@ -1,10 +1,7 @@
-import "../../../src/App.css";
-import Container from "bootstrap/dist/css/bootstrap.min.css/Container";
-import Row from "bootstrap/dist/css/bootstrap.min.css/Row";
-import Col from "bootstrap/dist/css/bootstrap.min.css";
 import NewsSideLeft from "./NewsSideLeft";
 import NewsSideRight from "./NewsSideRight";
 import NewsPost from "./NewsPost";
+import { Col, Container, Row } from "react-bootstrap";
 
 function PostIndex() {
   return (
