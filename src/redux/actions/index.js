@@ -4,6 +4,9 @@ export const SELECTED_PROFILE = "SELECTED_PROFILE";
 export const EXPEIRENCES = "EXPEIRENCES";
 export const PROFILI_SIMILI = "PROFILI_SIMILI";
 export const POTRESTI_CONOSCERE = "POTRESTI_CONOSCERE";
+export const SHOW_HIDE_MAIN_INFO = "SHOW_HIDE_MAIN_INFO";
+
+export const showHideAction = () => ({ type: SHOW_HIDE_MAIN_INFO, payload: "" });
 
 export const myProfileAction = () => {
   return async dispatch => {
