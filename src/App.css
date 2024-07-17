@@ -1,12 +1,392 @@
 body {
   background-color: #f4f2ee;
 }
+
 #imgProfile {
   transform: translate(30px, 110px);
 }
+
 #pencil:hover {
   background-color: rgb(233, 237, 240);
 }
+
 .Mostratutti:hover {
   background-color: #eaf5f3 !important;
 }
+
+
+
+
+
+
+/* --------------------------- CARD - NEWS SIDE LEFT-------------------------------------- */
+
+
+
+
+.newsSideLeftCard {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  overflow: hidden;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+
+.nslHeader {
+  background-color: #e0e0e0;
+  background-image: url(./components/newsPage/a.png);
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.nslAvatar {
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 10px;
+  position: absolute;
+  bottom: -30px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nslAvatar img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.nslContent {
+  text-align: center;
+  padding: 40px 20px 20px 20px;
+}
+
+.nslContent h2 {
+  margin: 10px 0 5px;
+  font-size: 20px;
+}
+
+.nslContent p {
+  color: #777;
+  margin: 0;
+  font-size: 14px;
+}
+
+.nslFooter {
+  border-top: 1px solid #e0e0e0;
+  /* padding: 20px; */
+}
+
+.nslSection {
+  /* margin-bottom: 15px; */
+  border-bottom: 1px solid #e0e0e0;
+
+  padding: 20px;
+
+
+}
+
+.nslSection p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.nslSection a {
+  color: #0073b1;
+  text-decoration: none;
+}
+
+.nslSection .premium {
+  color: #ff9a00;
+}
+
+.nslSection .icon {
+  float: right;
+  vertical-align: top;
+}
+
+.nslSection .icon2 {
+  float: left;
+  font-size: 18px;
+  margin-right: 10px;
+
+}
+
+
+.icon {
+  margin-top: 0px;
+}
+
+/* --------------------------- CARD - NEWS SIDE RIGHT-------------------------------------- */
+
+
+.newsSideRightCard {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+
+.newsSideRightCard a {
+  text-decoration: none;
+  color: rgb(90, 89, 89);
+  font-size: 16px;
+}
+
+.nsr-details {
+  font-size: 12px;
+  margin-left: 20px;
+}
+
+.nsrCard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.nsrCard-header h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.nsrCard-header .icon {
+  font-size: 16px;
+}
+
+.nsrCard-content {
+  padding: 10px 0;
+}
+
+.nsrCard-content h3 {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.nsrCard-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  font-weight: 300;
+
+}
+
+.nsrCard-content ul li {
+  margin-bottom: 10px;
+  font-size: 10px;
+}
+
+.nsrCard-content ul a {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nsrCard-content ul p {
+  font-size: 12px;
+  font-weight: 100;
+  margin-left: 0px;
+}
+
+.nsrCard-footer a {
+  font-size: 12px;
+}
+
+.nsrCard-footer p {
+  font-size: 13px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+
+
+
+
+/* --------------------------- FINISH CARD - NEWS SIDE RIGHT------------------------------- */
+
+
+
+
+
+
+
+
+
+/* --------------------- ------POST----- -------------------------- */
+
+
+
+
+.postCard {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.postCard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.postProfile-info {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.postProfile-info h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.postProfile-info p {
+  margin: 0;
+  font-size: 12px;
+  color: #777;
+}
+
+.postProfile-info span {
+  font-size: 12px;
+  color: #777;
+}
+
+.postFollow {
+  color: #0073b1;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  /* align-items: flex-end;   qui */
+  justify-content: flex-end;
+
+}
+
+.postMore {
+  font-size: 20px;
+  color: #777;
+}
+
+.postCard-content {
+  margin: 15px 0;
+}
+
+.postCard-content h4 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.postCard-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.postCard-content a {
+  color: #0073b1;
+  text-decoration: none;
+}
+
+.postProfile-info {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.postProfile-info .icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+.postProfile-info span {
+  font-size: 12px;
+  color: #777;
+  margin-right: 15px;
+}
+
+.postCard-footer {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  color: #0073b1;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.action-btn:hover {
+  text-decoration: underline;
+}
+
+
+.postCard-info a {
+  text-decoration: none;
+  color: black;
+}
+
+.postLike {
+  margin-right: 5px;
+  color: black;
+}
+
+
+
+.postMarginRight {
+  margin-right: 10px;
+}
+
+.postMarginRight {
+  margin-left: 9px;
+}
+
+
+.postCard-content h4 {
+  margin-bottom: 12px;
+  margin-top: 22px;
+}
+
+.postCard-content p {
+  margin-bottom: 12px;
+}
+
+.postProfile-info H3 {
+  font-size: 19px;
+  margin-right: 7px;
+  letter-spacing: -0.5px;
+}
+
+
+
+
+/* ------------------- --------END-POST-------- ------------------------ */
