@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import Profili from "./Profili";
 import { PersonFillAdd, SendFill } from "react-bootstrap-icons";
 
-const MostraTutti = () => {
+const MostraTutti = ({ titolo }) => {
   const [show, setShow] = useState(false);
   const profiles = useSelector(state => state.epicProfiles.profiles);
 
@@ -19,15 +19,15 @@ const MostraTutti = () => {
 
       <Modal show={show} onHide={handleClose} scrollable={true}>
         <Modal.Header closeButton>
-          <Modal.Title>Altri Profili simili</Modal.Title>
+          <Modal.Title>{titolo}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {profiles.map(epicProfile => {
             return (
               <>
                 <Profili epicProfile={epicProfile} key={epicProfile._id} />
-                <div className="d-flex ">
-                  <button className="ms-auto mt-1 py-1 px-2 rounded-pill  btn btn-outline-dark">
+                <div className="d-flex justify-content-center">
+                  <button className=" mt-1 py-1 px-2 rounded-pill  btn btn-outline-dark">
                     <SendFill /> Messaggio
                   </button>
                   <button className=" mt-1 py-1 ms-4 px-2 rounded-pill  btn btn-outline-dark ">

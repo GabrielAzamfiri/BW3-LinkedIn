@@ -21,10 +21,10 @@ const MainProfile = () => {
             variant="top"
             src="https://media.licdn.com/dms/image/C5616AQHZGvVazLoGBQ/profile-displaybackgroundimage-shrink_350_1400/0/1654694401780?e=1726704000&v=beta&t=E73F_BUro83tkJ8NOckNJsjctaqUGwTbU-ejLx0WFLo"
           />
-          <Button id="pencil" variant="transparent" className="rounded-circle bg-white position-absolute top-0 end-0 d-flex align-items-center justify-content-center me-4 mt-4 py-3">
+          <Button variant="transparent" className="rounded-circle bg-white position-absolute top-0 end-0 d-flex align-items-center justify-content-center me-4 mt-4 py-3">
             <Pencil className="fs-5 " fill="blue" />
           </Button>
-          <Button id="pencil" variant="transparent" className="rounded-circle h-25 position-absolute top-100 end-0 d-flex align-items-center justify-content-center me-4 mt-4 ">
+          <Button variant="transparent" className="pencil rounded-circle h-25 position-absolute top-100 end-0 d-flex align-items-center justify-content-center me-4 mt-4 ">
             <Pencil className="fs-4  " />
           </Button>
         </div>

@@ -4,8 +4,13 @@ body {
 #imgProfile {
   transform: translate(30px, 110px);
 }
-#pencil:hover {
-  background-color: rgb(233, 237, 240);
+.pencil:hover,
+.addPlus:hover {
+  background-color: rgb(233, 237, 240) !important;
+}
+.pencil,
+.addPlus {
+  height: 3rem !important;
 }
 .Mostratutti:hover {
   background-color: #eaf5f3 !important;

@@ -1,7 +1,9 @@
-import { MY_PROFILE } from "../actions";
+import { EXPEIRENCES, MY_PROFILE, SELECTED_PROFILE } from "../actions";
 
 const initialState = {
   profile: null,
+  selectedProfile: null,
+  experiences: [],
 };
 
 const myProfileReducer = (state = initialState, action) => {
@@ -10,6 +12,16 @@ const myProfileReducer = (state = initialState, action) => {
       return {
         ...state,
         profile: action.payload,
+      };
+    case SELECTED_PROFILE:
+      return {
+        ...state,
+        selectedProfile: action.payload,
+      };
+    case EXPEIRENCES:
+      return {
+        ...state,
+        experiences: action.payload,
       };
 
     default:

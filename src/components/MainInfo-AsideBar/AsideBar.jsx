@@ -37,7 +37,7 @@ const AsideBar = () => {
             </span>
           </div>
 
-          <span className="opacity-75">
+          <span className="opacity-75 ">
             www.linkedin.com/in/
             <br />
             {profile.name}-{profile.surname}-{profile._id}

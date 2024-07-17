@@ -24,7 +24,7 @@ const ProfiliSimili = () => {
         );
       })}
 
-      <MostraTutti />
+      <MostraTutti titolo="Altri Profili simili" />
     </Col>
   );
 };

@@ -1,5 +1,7 @@
 export const MY_PROFILE = "MY_PROFILE";
 export const EPIC_PROFILES = "EPIC_PROFILES";
+export const SELECTED_PROFILE = "SELECTED_PROFILE";
+export const EXPEIRENCES = "EXPEIRENCES";
 export const PROFILI_SIMILI = "PROFILI_SIMILI";
 export const POTRESTI_CONOSCERE = "POTRESTI_CONOSCERE";
 
@@ -24,6 +26,29 @@ export const myProfileAction = () => {
     }
   };
 };
+
+export const profileEsperienzeAction = ProfileID => {
+  return async dispatch => {
+    try {
+      const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${ProfileID}/experiences`, {
+        headers: {
+          // chiave di autenticazione
+          Authorization: `Bearer ${import.meta.env.VITE_FETCH_KEY}`,
+        },
+      });
+      if (response.ok) {
+        let data = await response.json();
+
+        dispatch({ type: EXPEIRENCES, payload: data });
+      } else {
+        throw new Error("Errore nel erperimento dei dati 😥");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
 export const epicProfilesAction = () => {
   return async dispatch => {
     try {

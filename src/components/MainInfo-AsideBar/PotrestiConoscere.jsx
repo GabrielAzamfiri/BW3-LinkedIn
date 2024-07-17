@@ -24,7 +24,7 @@ const PotrestiConoscere = () => {
           </>
         );
       })}
-      <MostraTutti />
+      <MostraTutti titolo="Persone che potresti conoscere" />
     </Col>
   );
 };
