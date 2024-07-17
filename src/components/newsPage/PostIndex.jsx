@@ -7,16 +7,15 @@ function PostIndex() {
   return (
     <>
       <Container>
-        <Row>
+        <Row className="justify-content-center mt-4">
           <Col md={3}>
             <NewsSideLeft />
           </Col>
           <Col md={6}>
-            {" "}
-            <NewsPost />{" "}
+            <NewsPost />
           </Col>
           <Col md={3}>
-            <NewsSideRight />{" "}
+            <NewsSideRight />
           </Col>
         </Row>
       </Container>

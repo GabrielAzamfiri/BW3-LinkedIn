@@ -34,14 +34,14 @@ body {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  width: 100%;
   overflow: hidden;
   font-size: 14px;
   letter-spacing: 0.2px;
 }
 
 .nslHeader {
-  background-color: #e0e0e0;
+  background-color: #026660;
   background-image: url(./components/newsPage/a.png);
   height: 100px;
   display: flex;
@@ -74,7 +74,7 @@ body {
 }
 
 .nslContent h2 {
-  margin: 10px 0 5px;
+  margin-top: 10px;
   font-size: 20px;
 }
 
@@ -136,7 +136,7 @@ body {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 320px;
+  width: 100%;
   padding: 20px;
   box-sizing: border-box;
 }
@@ -239,7 +239,7 @@ body {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 600px;
+  width: 100%;
   padding: 15px;
   box-sizing: border-box;
 }

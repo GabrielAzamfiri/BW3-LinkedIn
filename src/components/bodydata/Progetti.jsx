@@ -97,18 +97,16 @@ function Progetti() {
                 projected onto your visual field. Our solution can show you
                 cancerous tumor area, brain aneurysm, vascular malformation,
                 assist and guide you along anatomical and functional pathways of
-                the brain and spinal cord.
-                <p></p>
-                https://www.youtube.com/watch?v=1lEC9kuZebY <p></p>The project
-                aims at developing the current navigation systems, offering
-                surgeons more sophisticated and thus more useful information.
-                Holograms that faithfully reproduce the 3D model of the
-                patient’s brain, showing both cortical surfaces and deep
-                structures, including tissue vascularization, are created using
-                data acquired through neurodiagnostic testing (high field MRI
-                scan, CAT scan). In addition to exclusively anatomic data,
-                functional data and tractographies of neural tracts can be
-                provided through functional magnetic resonance imaging (fMRI).
+                the brain and spinal cord. The project aims at developing the
+                current navigation systems, offering surgeons more sophisticated
+                and thus more useful information. Holograms that faithfully
+                reproduce the 3D model of the patient’s brain, showing both
+                cortical surfaces and deep structures, including tissue
+                vascularization, are created using data acquired through
+                neurodiagnostic testing (high field MRI scan, CAT scan). In
+                addition to exclusively anatomic data, functional data and
+                tractographies of neural tracts can be provided through
+                functional magnetic resonance imaging (fMRI).
               </p>
             </div>
           </div>
