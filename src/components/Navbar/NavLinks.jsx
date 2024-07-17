@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const NavLinks = () => {
   return (
     <>
-      <Link to="/Home" className="nav-link d-flex flex-column align-items-center">
+      <Link to="/" className="nav-link d-flex flex-column align-items-center">
         <FaHome />
         <span>Home</span>
       </Link>

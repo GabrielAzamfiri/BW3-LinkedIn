@@ -1,6 +1,11 @@
 import { NavDropdown, Image } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { SELECTED_PROFILE } from "../../redux/actions";
 
 const UserDropdown = ({ userInfo, handleLogout }) => {
+  const dispatch = useDispatch();
+
   return (
     <NavDropdown
       title={
@@ -23,7 +28,9 @@ const UserDropdown = ({ userInfo, handleLogout }) => {
           </div>
         </div>
         <NavDropdown.Divider />
-        <NavDropdown.Item href="#profile">View Profile</NavDropdown.Item>
+        <Link to="/Profile" className="dropdown-item" onClick={() => dispatch(SELECTED_PROFILE, null)}>
+          View Profile
+        </Link>
         <NavDropdown.Divider />
         <h6 className="dropdown-header">Account</h6>
         <NavDropdown.Item href="#premium">Try Premium for €0</NavDropdown.Item>

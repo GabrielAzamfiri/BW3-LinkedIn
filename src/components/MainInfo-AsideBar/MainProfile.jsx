@@ -1,16 +1,12 @@
-import { useEffect } from "react";
 import { Button, Card, Col, Row } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import { myProfileAction } from "../../redux/actions";
+import { useSelector } from "react-redux";
+
 import { Pencil, ShieldCheck } from "react-bootstrap-icons";
 
 const MainProfile = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(myProfileAction());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  const profile = useSelector(state => state.profile.profile);
+  const myProfile = useSelector(state => state.profile.profile);
+  const selectedProfile = useSelector(state => state.profile.selectedProfile);
+  const profile = selectedProfile ? selectedProfile : myProfile;
   return (
     profile && (
       <Card className=" position-relative rounded">
@@ -21,12 +17,16 @@ const MainProfile = () => {
             variant="top"
             src="https://media.licdn.com/dms/image/C5616AQHZGvVazLoGBQ/profile-displaybackgroundimage-shrink_350_1400/0/1654694401780?e=1726704000&v=beta&t=E73F_BUro83tkJ8NOckNJsjctaqUGwTbU-ejLx0WFLo"
           />
-          <Button variant="transparent" className="rounded-circle bg-white position-absolute top-0 end-0 d-flex align-items-center justify-content-center me-4 mt-4 py-3">
-            <Pencil className="fs-5 " fill="blue" />
-          </Button>
-          <Button variant="transparent" className="pencil rounded-circle h-25 position-absolute top-100 end-0 d-flex align-items-center justify-content-center me-4 mt-4 ">
-            <Pencil className="fs-4  " />
-          </Button>
+          {profile === myProfile && (
+            <>
+              <Button variant="transparent" className="rounded-circle bg-white position-absolute top-0 end-0 d-flex align-items-center justify-content-center me-4 mt-4 py-3">
+                <Pencil className="fs-5 " fill="blue" />
+              </Button>
+              <Button variant="transparent" className="pencil rounded-circle h-25 position-absolute top-100 end-0 d-flex align-items-center justify-content-center me-4 mt-4 ">
+                <Pencil className="fs-4  " />
+              </Button>
+            </>
+          )}
         </div>
         <img id="imgProfile" src={profile.image} alt="profile image" className="rounded-circle border border-5 border-white position-absolute" width={160} height={160} />
         <Row className="pt-5  px-4  ">

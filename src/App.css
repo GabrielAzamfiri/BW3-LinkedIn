@@ -7,12 +7,14 @@ body {
 }
 
 .pencil:hover,
-.addPlus:hover {
+.addPlus:hover,
+.ArrowLeft:hover {
   background-color: rgb(233, 237, 240) !important;
 }
 
 .pencil,
-.addPlus {
+.addPlus,
+.ArrowLeft {
   height: 3rem !important;
 }
 
@@ -20,15 +22,7 @@ body {
   background-color: #eaf5f3 !important;
 }
 
-
-
-
-
-
 /* --------------------------- CARD - NEWS SIDE LEFT-------------------------------------- */
-
-
-
 
 .newsSideLeftCard {
   background-color: #fff;
@@ -94,8 +88,6 @@ body {
   border-bottom: 1px solid #e0e0e0;
 
   padding: 20px;
-
-
 }
 
 .nslSection p {
@@ -121,16 +113,13 @@ body {
   float: left;
   font-size: 18px;
   margin-right: 10px;
-
 }
-
 
 .icon {
   margin-top: 0px;
 }
 
 /* --------------------------- CARD - NEWS SIDE RIGHT-------------------------------------- */
-
 
 .newsSideRightCard {
   background-color: #fff;
@@ -140,8 +129,6 @@ body {
   padding: 20px;
   box-sizing: border-box;
 }
-
-
 
 .newsSideRightCard a {
   text-decoration: none;
@@ -186,7 +173,6 @@ body {
   padding: 0;
   margin: 10px 0 0 0;
   font-weight: 300;
-
 }
 
 .nsrCard-content ul li {
@@ -215,25 +201,9 @@ body {
   text-align: center;
 }
 
-
-
-
-
-
 /* --------------------------- FINISH CARD - NEWS SIDE RIGHT------------------------------- */
 
-
-
-
-
-
-
-
-
 /* --------------------- ------POST----- -------------------------- */
-
-
-
 
 .postCard {
   background-color: #fff;
@@ -287,7 +257,6 @@ body {
   font-weight: bold;
   /* align-items: flex-end;   qui */
   justify-content: flex-end;
-
 }
 
 .postMore {
@@ -356,7 +325,6 @@ body {
   text-decoration: underline;
 }
 
-
 .postCard-info a {
   text-decoration: none;
   color: black;
@@ -367,8 +335,6 @@ body {
   color: black;
 }
 
-
-
 .postMarginRight {
   margin-right: 10px;
 }
@@ -376,7 +342,6 @@ body {
 .postMarginRight {
   margin-left: 9px;
 }
-
 
 .postCard-content h4 {
   margin-bottom: 12px;
@@ -392,8 +357,5 @@ body {
   margin-right: 7px;
   letter-spacing: -0.5px;
 }
-
-
-
 
 /* ------------------- --------END-POST-------- ------------------------ */

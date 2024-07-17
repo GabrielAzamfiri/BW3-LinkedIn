@@ -6,12 +6,16 @@ import "../../assets/analisi.css";
 import Modalexp from "./Modalexp";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { profileEsperienzeAction, showHideAction } from "../../redux/actions";
+import { profileEsperienzeAction, showExperiencesAction } from "../../redux/actions";
 import { Pencil } from "react-bootstrap-icons";
 
 function Esperienza() {
   const dispatch = useDispatch();
-  const Profile = useSelector(state => state.profile.profile);
+  // const Profile = useSelector(state => state.profile.profile);
+  const myProfile = useSelector(state => state.profile.profile);
+  const selectedProfile = useSelector(state => state.profile.selectedProfile);
+  const profile = selectedProfile ? selectedProfile : myProfile;
+
   const experiences = useSelector(state => state.profile.experiences);
 
   const options = {
@@ -21,26 +25,28 @@ function Esperienza() {
   };
 
   useEffect(() => {
-    Profile && dispatch(profileEsperienzeAction(Profile._id));
+    profile && dispatch(profileEsperienzeAction(profile._id));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [Profile]);
+  }, [profile]);
 
   return (
     <Container className="container-fluid ">
       <Row className="d-flex justify-content-between align-middle border mt-3 px-3 pb-3 tabella">
         <Col md="12 d-flex justify-content-between">
           <h4 className="mt-3 line">Esperienze</h4>
-          <div className="line d-flex mt-3">
-            <Modalexp title="Aggiungi Esperienza" />
-            <Button variant="transparent" className="pencil  rounded-circle   d-flex align-items-center justify-content-center " onClick={() => dispatch(showHideAction())}>
-              <Pencil className="fs-4  " />
-            </Button>
-          </div>
+          {profile === myProfile && (
+            <div className="line d-flex mt-3">
+              <Modalexp title="Aggiungi Esperienza" />
+              <Button variant="transparent" className="pencil  rounded-circle   d-flex align-items-center justify-content-center " onClick={() => dispatch(showExperiencesAction())}>
+                <Pencil className="fs-4  " />
+              </Button>
+            </div>
+          )}
         </Col>
         {experiences &&
-          experiences.map(experience => {
+          experiences.map((experience, index) => {
             return (
-              <>
+              <div key={index}>
                 <Col md="12" className="justify-content-between mb-4">
                   <div className="div2 d-flex">
                     <div className="">
@@ -56,7 +62,7 @@ function Esperienza() {
                   </div>
                 </Col>
                 <hr />
-              </>
+              </div>
             );
           })}
       </Row>

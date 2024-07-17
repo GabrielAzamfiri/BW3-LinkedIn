@@ -81,7 +81,7 @@ function Modalexp({ title, experience }) {
 
       .then(resp => {
         if (resp.ok) {
-          console.log(resp);
+          alert(`La tua esperienza come ${experience.role} è stata eliminata con successo!`);
           dispatch(profileEsperienzeAction(Profile._id));
         } else {
           throw `Errore ${resp.status} : ${resp.statusText} `;
