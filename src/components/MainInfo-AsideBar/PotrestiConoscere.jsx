@@ -13,15 +13,15 @@ const PotrestiConoscere = () => {
         <span className="fw-bold d-block">Persone che potresti conoscere</span>
         <span className="opacity-50"> Dalla tua azienda </span>
       </div>
-      {potrestiConoscere.map(epicProfile => {
+      {potrestiConoscere.map((epicProfile, key) => {
         return (
-          <>
+          <div key={key}>
             <Profili epicProfile={epicProfile} key={epicProfile._id} />
             <button className="m-auto mt-1 py-1 px-2 rounded-pill  btn btn-outline-dark d-block d-flex align-items-center justify-content-center">
               <PersonFillAdd className="me-2" /> Collegati
             </button>
             <hr />
-          </>
+          </div>
         );
       })}
       <MostraTutti titolo="Persone che potresti conoscere" />

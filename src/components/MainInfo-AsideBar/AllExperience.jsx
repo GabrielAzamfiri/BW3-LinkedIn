@@ -1,9 +1,13 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import Modalexp from "../bodydata/Modalexp";
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { ArrowLeft } from "react-bootstrap-icons";
+import { showInfoProfileAction } from "../../redux/actions";
 
 const AllExperience = () => {
+  const dispatch = useDispatch();
+
   const options = {
     month: "long",
 
@@ -14,16 +18,20 @@ const AllExperience = () => {
   return (
     <Container className="container-fluid ">
       <Row className="d-flex justify-content-between align-middle border mt-3 px-3 pb-3 tabella">
-        <Col md="12 d-flex justify-content-between">
+        <Col md="12 d-flex justify-content-between align-items-center">
+          <Button variant="transparent" className="ArrowLeft rounded-circle  d-flex align-items-center justify-content-center mt-3">
+            <ArrowLeft onClick={() => dispatch(showInfoProfileAction())} className="fs-4  " />
+          </Button>
+
           <h4 className="mt-3 line">Esperienze</h4>
           <div className="line d-flex mt-3">
             <Modalexp title="Aggiungi Esperienza" />
           </div>
         </Col>
         {experiences &&
-          experiences.map(experience => {
+          experiences.map((experience, index) => {
             return (
-              <>
+              <div key={index}>
                 <Col md="12" className="justify-content-between mb-4">
                   <div>
                     <div className="">
@@ -42,7 +50,7 @@ const AllExperience = () => {
                   </div>
                 </Col>
                 <hr />
-              </>
+              </div>
             );
           })}
       </Row>

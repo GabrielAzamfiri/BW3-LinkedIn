@@ -14,7 +14,11 @@ const AsideBar = () => {
     dispatch(epicProfilesAction());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const profile = useSelector(state => state.profile.profile);
+
+  const myProfile = useSelector(state => state.profile.profile);
+  const selectedProfile = useSelector(state => state.profile.selectedProfile);
+  const profile = selectedProfile ? selectedProfile : myProfile;
+
   const profiles = useSelector(state => state.epicProfiles.profiles);
 
   return (
@@ -32,9 +36,11 @@ const AsideBar = () => {
           <hr className="my-3" />
           <div className="fs-6 d-flex justify-content-between align-items-center">
             <span className="fw-bold">Profilo pubblico e URL</span>
-            <span className="d-flex  align-items-center">
-              <Pencil className="fs-6 " />
-            </span>
+            {profile === myProfile && (
+              <span className="d-flex  align-items-center">
+                <Pencil className="fs-6 " />
+              </span>
+            )}
           </div>
 
           <span className="opacity-75 ">

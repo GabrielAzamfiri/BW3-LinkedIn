@@ -7,12 +7,14 @@ body {
 }
 
 .pencil:hover,
-.addPlus:hover {
+.addPlus:hover,
+.ArrowLeft:hover {
   background-color: rgb(233, 237, 240) !important;
 }
 
 .pencil,
-.addPlus {
+.addPlus,
+.ArrowLeft {
   height: 3rem !important;
 }
 

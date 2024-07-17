@@ -1,7 +1,11 @@
-import { Dropdown, Image, Button } from "react-bootstrap";
+import { Image, Dropdown } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { SELECTED_PROFILE } from "../../redux/actions";
 
 const UserDropdown = ({ userInfo, handleLogout }) => {
+  const dispatch = useDispatch();
+
   return (
     <Dropdown className="d-flex">
       <Dropdown.Toggle as="div" className="d-flex flex-column align-items-center dropdown-toggle ms-2 me-2 pt-2">
@@ -21,9 +25,9 @@ const UserDropdown = ({ userInfo, handleLogout }) => {
               <span>{userInfo.title}</span>
             </div>
           </div>
-        
+
           <div className="d-grid gap-2">
-            <Link to={"/"} className="btn btn-outline-primary">
+            <Link to={"/Profile"} className="btn btn-outline-primary" onClick={() => dispatch(SELECTED_PROFILE, null)}>
               View Profile
             </Link>
           </div>

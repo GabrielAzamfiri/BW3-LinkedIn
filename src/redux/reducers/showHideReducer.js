@@ -1,4 +1,4 @@
-import { SHOW_HIDE_MAIN_INFO } from "../actions";
+import { SHOW_EXPERIENCES, SHOW_INFO_PROFILE } from "../actions";
 
 const initialState = {
   profileInfo: true,
@@ -7,11 +7,17 @@ const initialState = {
 
 const showHideReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SHOW_HIDE_MAIN_INFO:
+    case SHOW_EXPERIENCES:
       return {
         ...state,
         profileInfo: false,
         experieces: true,
+      };
+    case SHOW_INFO_PROFILE:
+      return {
+        ...state,
+        profileInfo: true,
+        experieces: false,
       };
 
     default:

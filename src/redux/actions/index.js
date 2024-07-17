@@ -4,9 +4,12 @@ export const SELECTED_PROFILE = "SELECTED_PROFILE";
 export const EXPEIRENCES = "EXPEIRENCES";
 export const PROFILI_SIMILI = "PROFILI_SIMILI";
 export const POTRESTI_CONOSCERE = "POTRESTI_CONOSCERE";
-export const SHOW_HIDE_MAIN_INFO = "SHOW_HIDE_MAIN_INFO";
+export const SHOW_EXPERIENCES = "SHOW_EXPERIENCES";
+export const SHOW_INFO_PROFILE = "SHOW_INFO_PROFILE";
 
-export const showHideAction = () => ({ type: SHOW_HIDE_MAIN_INFO, payload: "" });
+export const showExperiencesAction = () => ({ type: SHOW_EXPERIENCES, payload: "" });
+export const showInfoProfileAction = () => ({ type: SHOW_INFO_PROFILE, payload: "" });
+export const selectProfileAction = profile => ({ type: SELECTED_PROFILE, payload: profile });
 
 export const SEARCH_QUERY = "SEARCH_QUERY";
 export const SEARCH_RESULTS = "SEARCH_RESULTS";

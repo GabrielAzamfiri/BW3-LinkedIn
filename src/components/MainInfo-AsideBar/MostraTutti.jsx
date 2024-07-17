@@ -22,9 +22,9 @@ const MostraTutti = ({ titolo }) => {
           <Modal.Title>{titolo}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {profiles.map(epicProfile => {
+          {profiles.map((epicProfile, key) => {
             return (
-              <>
+              <div key={key}>
                 <Profili epicProfile={epicProfile} key={epicProfile._id} />
                 <div className="d-flex justify-content-center">
                   <button className=" mt-1 py-1 px-2 rounded-pill  btn btn-outline-dark">
@@ -35,7 +35,7 @@ const MostraTutti = ({ titolo }) => {
                   </button>
                 </div>
                 <hr />
-              </>
+              </div>
             );
           })}
         </Modal.Body>
