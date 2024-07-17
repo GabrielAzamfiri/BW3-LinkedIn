@@ -15,7 +15,7 @@ function Modalexp({ title, experience }) {
     role: "",
     company: "",
     startDate: "",
-    endDate: null,
+    endDate: "",
     description: "",
     area: "",
   });
@@ -143,27 +143,12 @@ function Modalexp({ title, experience }) {
 
             <Form.Group className="mb-3" controlId="exampleForm.startDate">
               <Form.Label>Start Date</Form.Label>
-              <Form.Control
-                min={new Date().toISOString().slice(0, 10)}
-                onChange={e => setExperiences({ ...experiences, startDate: e.target.value })}
-                value={experiences.startDate}
-                name="startDate"
-                type="date"
-                rows={1}
-                required
-              />
+              <Form.Control onChange={e => setExperiences({ ...experiences, startDate: e.target.value })} value={experiences.startDate.slice(0, 10)} name="startDate" type="date" rows={1} required />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="exampleForm.endDate">
               <Form.Label>End Date</Form.Label>
-              <Form.Control
-                min={new Date().toISOString().split(".")[0].slice(0, -3)}
-                onChange={e => setExperiences({ ...experiences, endDate: e.target.value })}
-                value={experiences.endDate}
-                name="endDate"
-                type="date"
-                rows={1}
-              />
+              <Form.Control onChange={e => setExperiences({ ...experiences, endDate: e.target.value })} value={experiences.endDate.slice(0, 10)} name="endDate" type="date" rows={1} />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="exampleForm.Description">
@@ -178,7 +163,7 @@ function Modalexp({ title, experience }) {
                 value={experiences.description}
                 name="description"
                 as="textarea"
-                rows={4}
+                rows={2}
                 required
               />
             </Form.Group>
