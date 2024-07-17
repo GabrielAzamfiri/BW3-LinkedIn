@@ -8,8 +8,24 @@ export const SHOW_HIDE_MAIN_INFO = "SHOW_HIDE_MAIN_INFO";
 
 export const showHideAction = () => ({ type: SHOW_HIDE_MAIN_INFO, payload: "" });
 
+export const SEARCH_QUERY = "SEARCH_QUERY";
+export const SEARCH_RESULTS = "SEARCH_RESULTS";
+export const SEARCH_LOADING = "SEARCH_LOADING";
+export const SEARCH_ERROR = "SEARCH_ERROR";
+
+export const SET_TOKEN = "SET_TOKEN";
+export const SET_USER_INFO = "SET_USER_INFO";
+
+export * from "./userActions";
+export * from "./searchActions";
+
+export const setQuery = (query) => ({
+  type: SEARCH_QUERY,
+  payload: query,
+});
+
 export const myProfileAction = () => {
-  return async dispatch => {
+  return async (dispatch) => {
     try {
       const response = await fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
         headers: {
@@ -53,7 +69,7 @@ export const profileEsperienzeAction = ProfileID => {
 };
 
 export const epicProfilesAction = () => {
-  return async dispatch => {
+  return async (dispatch) => {
     try {
       const response = await fetch("https://striveschool-api.herokuapp.com/api/profile/", {
         headers: {

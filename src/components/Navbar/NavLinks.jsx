@@ -13,15 +13,15 @@ const NavLinks = () => {
         <FaUsers />
         <span>My Network</span>
       </Nav.Link>
-      <Nav.Link href="#jobs" className="d-flex flex-column align-items-center">
+      <Nav.Link href="#jobs" className="d-flex flex-column align-items-center pt-3">
         <FaBriefcase />
         <span>Jobs</span>
       </Nav.Link>
-      <Nav.Link href="#messaging" className="d-flex flex-column align-items-center">
+      <Nav.Link href="#messaging" className="d-flex flex-column align-items-center pt-3">
         <FaComments />
         <span>Messaging</span>
       </Nav.Link>
-      <Nav.Link href="#notifications" className="d-flex flex-column align-items-center">
+      <Nav.Link href="#notifications" className="d-flex flex-column align-items-center pt-3">
         <FaBell />
         <span>Notifications</span>
       </Nav.Link>
