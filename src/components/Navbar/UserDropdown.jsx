@@ -1,4 +1,5 @@
 import { Dropdown, Image, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const UserDropdown = ({ userInfo, handleLogout }) => {
   return (
@@ -22,9 +23,9 @@ const UserDropdown = ({ userInfo, handleLogout }) => {
           </div>
         
           <div className="d-grid gap-2">
-            <Button variant="outline-primary" href="#profile">
+            <Link to={"/"} className="btn btn-outline-primary">
               View Profile
-            </Button>
+            </Link>
           </div>
           <Dropdown.Divider />
           <h6 className="fw-bold">Account</h6>
