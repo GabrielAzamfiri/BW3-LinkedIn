@@ -446,7 +446,7 @@ body {
 
 .createPost-options {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 10px;
 }
 
@@ -456,18 +456,15 @@ body {
   cursor: pointer;
 }
 
-.option-createPost img {
-  width: 24px;
-  height: 24px;
-  margin-right: 5px;
-}
 
 .option-createPost span {
   font-size: 14px;
   color: #555;
 }
 
-
+.createLeft {
+  margin-left: 7px;
+}
 
 
 
