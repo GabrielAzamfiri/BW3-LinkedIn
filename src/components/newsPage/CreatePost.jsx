@@ -4,7 +4,7 @@ function CreatePost() {
       <div className="createPost-container">
         <div className="createPost-input">
           <img
-            src="user-avatar.png"
+            src="avatar.png"
             alt="User Avatar"
             className="createPost-avatar"
           />

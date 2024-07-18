@@ -6,7 +6,7 @@ function NewsPost() {
       <div className="postCard">
         <div className="postCard-header">
           <div className="postProfile">
-            <a href="#">
+            <a href="#" className="prova">
               {" "}
               <img src="/epi.jpg" alt="EPICODE Logo" className="logo" />
             </a>
@@ -15,6 +15,7 @@ function NewsPost() {
               <p className="postMarginRight">16.385 follower </p>
               <span>
                 <span className="postMarginRight postMarginRight">2s •</span>
+
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
