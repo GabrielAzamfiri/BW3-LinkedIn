@@ -22,10 +22,7 @@ body {
   background-color: #eaf5f3 !important;
 }
 
-
 /* --------------------------- IMPORT ANALISI-------------------------------------- */
-
-
 
 body {
   font-family: Helvetica, Arial, sans-serif;
@@ -114,10 +111,7 @@ footer a {
   margin-left: 12px;
 }
 
-
 /* --------------------------- FINE IMPORT ANALISI-------------------------------------- */
-
-
 
 /* --------------------------- CARD - NEWS SIDE LEFT-------------------------------------- */
 
@@ -187,8 +181,6 @@ footer a {
   padding: 20px;
 }
 
-
-
 .nslSection p {
   margin: 0;
   font-weight: bold;
@@ -215,7 +207,6 @@ footer a {
   font-size: 18px;
   margin-right: 10px;
   margin-top: -5px;
-
 }
 
 .icon {
@@ -346,8 +337,6 @@ footer a {
 
 .postProfile-info h3 {
   font-size: 14px;
-
-
 }
 
 .postProfile-info p {
@@ -444,7 +433,6 @@ footer a {
 .postLike {
   margin-right: 5px;
   color: black;
-
 }
 
 .postMarginRight {
@@ -468,24 +456,11 @@ footer a {
   font-size: 19px;
   margin-right: 7px;
   letter-spacing: -0.5px;
-
 }
-
 
 /* ------------------- --------END-POST-------- ------------------------ */
 
-
-
-
-
-
-
 /* ------------------- --------START CREATE POST-------- ------------------------ */
-
-
-
-
-
 
 .createPost-container {
   background-color: white;
@@ -531,7 +506,6 @@ footer a {
   cursor: pointer;
 }
 
-
 .option-createPost span {
   font-size: 14px;
   color: #555;
@@ -543,7 +517,6 @@ footer a {
 }
 
 /* ------------------- --------END-POST-------- ------------------------ */
-/* for business css */
 .dropdown-menu-wide {
   width: 600px;
 }
@@ -553,4 +526,144 @@ footer a {
   margin-top: 10px;
 }
 
-/* ------------------- --------END CREATE POST-------- ------------------------ */
+.me-2 {
+  margin-right: 0.5rem;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav .nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.navbar-nav .dropdown-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.custom-navbar {
+  height: 50px;
+}
+
+.custom-navbar .navbar-brand img {
+  max-height: 100%;
+}
+
+.custom-navbar .navbar-nav .nav-link,
+.custom-navbar .navbar-nav .dropdown-toggle {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.custom-navbar .navbar-collapse {
+  align-items: center;
+}
+
+/* .custom-dropdown-toggle::after {
+  display: none !important;
+} */
+
+.vertical-separator {
+  height: 50px;
+  width: 1px;
+  background-color: #ccc;
+  margin: 0 10px;
+}
+
+/* css per le ricerche recente */
+.search-results {
+  position: absolute;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+}
+
+.recent-searches-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.recent-searches-header span {
+  font-weight: bold;
+}
+
+.recent-search-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.recent-search-item img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* pulsante "X" per cancellare il testo nella barra di ricerca */
+.search-bar-container {
+  position: relative;
+}
+
+.search-bar .form-control {
+  padding-right: 30px;
+}
+
+.clear-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #aaa;
+}
+
+.search-results {
+  position: absolute;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+}
+
+.recent-searches-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.recent-searches-header span {
+  font-weight: bold;
+}
+
+.recent-search-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.recent-search-item img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
