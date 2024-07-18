@@ -2,6 +2,7 @@ import { Button, Card, Col, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
 import { Pencil, ShieldCheck } from "react-bootstrap-icons";
+import ModalChangeImg from "./ModalChangeImg";
 
 const MainProfile = () => {
   const myProfile = useSelector(state => state.profile.profile);
@@ -28,7 +29,8 @@ const MainProfile = () => {
             </>
           )}
         </div>
-        <img id="imgProfile" src={profile.image} alt="profile image" className="rounded-circle border border-5 border-white position-absolute" width={160} height={160} />
+        <ModalChangeImg />
+        {/* <img id="imgProfile" src={profile.image} alt="profile image" className="rounded-circle border border-5 border-white position-absolute" width={160} height={160} /> */}
         <Row className="pt-5  px-4  ">
           <Col xs={8}>
             <Card.Body className="lh-sm">
