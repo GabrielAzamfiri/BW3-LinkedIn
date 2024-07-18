@@ -6,7 +6,7 @@ function NewsPost() {
       <div className="postCard">
         <div className="postCard-header">
           <div className="postProfile">
-            <a href="#" className="prova">
+            <a href="#">
               {" "}
               <img src="/epi.jpg" alt="EPICODE Logo" className="logo" />
             </a>
