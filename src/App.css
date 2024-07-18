@@ -309,38 +309,32 @@ footer a {
   box-sizing: border-box;
 }
 
-.postCard-header {
+/* .postCard-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #e0e0e0;
   padding-bottom: 10px;
-}
+} */
 
 .postProfile-info {
   display: flex;
   align-items: center;
-}
-
-.postProfile-info {
-  display: flex;
-  align-items: center;
-  float: right;
 }
 
 .logo {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   margin-right: 10px;
 }
 
 .postProfile-info h3 {
   font-size: 14px;
+  letter-spacing: -0.5px;
 }
 
 .postProfile-info p {
-  margin: 0;
   font-size: 12px;
   color: #777;
 }
@@ -386,22 +380,10 @@ footer a {
   text-decoration: none;
 }
 
-.postProfile-info {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-}
-
 .postProfile-info .icon {
   width: 16px;
   height: 16px;
   margin-right: 5px;
-}
-
-.postProfile-info span {
-  font-size: 12px;
-  color: #777;
-  margin-right: 8px;
 }
 
 .postCard-footer {
@@ -452,12 +434,6 @@ footer a {
   margin-bottom: 12px;
 }
 
-.postProfile-info H3 {
-  font-size: 19px;
-  margin-right: 7px;
-  letter-spacing: -0.5px;
-}
-
 /* ------------------- --------END-POST-------- ------------------------ */
 
 /* ------------------- --------START CREATE POST-------- ------------------------ */
@@ -480,18 +456,10 @@ footer a {
 }
 
 .createPost-avatar {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   margin-right: 10px;
-}
-
-.createPost-input input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  font-size: 16px;
 }
 
 .createPost-options {
@@ -501,8 +469,6 @@ footer a {
 }
 
 .option-createPost {
-  display: flex;
-  align-items: center;
   cursor: pointer;
 }
 

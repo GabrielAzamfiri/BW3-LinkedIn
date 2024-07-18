@@ -6,6 +6,7 @@ export const PROFILI_SIMILI = "PROFILI_SIMILI";
 export const POTRESTI_CONOSCERE = "POTRESTI_CONOSCERE";
 export const SHOW_EXPERIENCES = "SHOW_EXPERIENCES";
 export const SHOW_INFO_PROFILE = "SHOW_INFO_PROFILE";
+export const EPIC_POSTS = "EPIC_POSTS";
 
 export const showExperiencesAction = () => ({ type: SHOW_EXPERIENCES, payload: "" });
 export const showInfoProfileAction = () => ({ type: SHOW_INFO_PROFILE, payload: "" });
@@ -22,13 +23,13 @@ export const SET_USER_INFO = "SET_USER_INFO";
 export * from "./userActions";
 export * from "./searchActions";
 
-export const setQuery = (query) => ({
+export const setQuery = query => ({
   type: SEARCH_QUERY,
   payload: query,
 });
 
 export const myProfileAction = () => {
-  return async (dispatch) => {
+  return async dispatch => {
     try {
       const response = await fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
         headers: {
@@ -72,7 +73,7 @@ export const profileEsperienzeAction = ProfileID => {
 };
 
 export const epicProfilesAction = () => {
-  return async (dispatch) => {
+  return async dispatch => {
     try {
       const response = await fetch("https://striveschool-api.herokuapp.com/api/profile/", {
         headers: {
@@ -97,6 +98,33 @@ export const epicProfilesAction = () => {
         dispatch({ type: EPIC_PROFILES, payload: data });
         dispatch({ type: PROFILI_SIMILI, payload: profiliSimili });
         dispatch({ type: POTRESTI_CONOSCERE, payload: potrestiConoscere });
+      } else {
+        throw new Error("Errore nel erperimento dei dati 😥");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+export const epicPostsAction = () => {
+  return async dispatch => {
+    try {
+      const response = await fetch("https://striveschool-api.herokuapp.com/api/posts", {
+        headers: {
+          // chiave di autenticazione
+          Authorization: `Bearer ${import.meta.env.VITE_FETCH_KEY}`,
+        },
+      });
+      if (response.ok) {
+        let data = await response.json();
+
+        let arrayPost = [];
+
+        for (let i = 0; i < 15; i++) {
+          arrayPost.push(data.toReversed()[i]);
+        }
+
+        dispatch({ type: EPIC_POSTS, payload: arrayPost });
       } else {
         throw new Error("Errore nel erperimento dei dati 😥");
       }
