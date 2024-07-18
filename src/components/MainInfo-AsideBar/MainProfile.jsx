@@ -29,8 +29,11 @@ const MainProfile = () => {
             </>
           )}
         </div>
-        <ModalChangeImg />
-        {/* <img id="imgProfile" src={profile.image} alt="profile image" className="rounded-circle border border-5 border-white position-absolute" width={160} height={160} /> */}
+        {profile === myProfile ? (
+          <ModalChangeImg />
+        ) : (
+          <img id="imgProfile" src={profile.image} alt="profile image" className="rounded-circle border border-5 border-white position-absolute" width={160} height={160} />
+        )}
         <Row className="pt-5  px-4  ">
           <Col xs={8}>
             <Card.Body className="lh-sm">
