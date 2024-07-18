@@ -2,14 +2,16 @@ import { useSelector, useDispatch } from "react-redux";
 import { Navbar, Nav, Container, Row, Col } from "react-bootstrap";
 import { setToken, setUserInfo } from "../../redux/actions";
 import SearchBar from "./SearchBar";
+import JobSearchBar from "./JobSearchBar"; 
 import NavLinks from "./NavLinks";
 import UserDropdown from "./UserDropdown";
 import ForBusinessDropdown from "./ForBusinessDropdown";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom"; 
 
-const LinkedInNavbar = () => {
+const NavbarComponent = ({ onSearch }) => { 
   const userInfo = useSelector(state => state.profile.profile);
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const handleLogout = () => {
     dispatch(setToken(null));
@@ -26,7 +28,7 @@ const LinkedInNavbar = () => {
               <Link to={"/"} className="navbar-brand">
                 <img src="/linkedin-logo.png" alt="LinkedIn Logo" width="30" height="30" className="d-inline-block align-top" />
               </Link>
-              <SearchBar />
+              {location.pathname === "/jobs" ? <JobSearchBar onSearch={onSearch} /> : <SearchBar />}
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ms-auto navbar-nav">
@@ -50,4 +52,4 @@ const LinkedInNavbar = () => {
   );
 };
 
-export default LinkedInNavbar;
+export default NavbarComponent;
