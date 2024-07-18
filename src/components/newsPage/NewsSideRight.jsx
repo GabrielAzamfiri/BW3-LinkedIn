@@ -1,5 +1,3 @@
-import "../../../src/App.css";
-
 function NewsSideRight() {
   return (
     <>
@@ -9,8 +7,8 @@ function NewsSideRight() {
           <span className="icon">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="23"
-              height="23"
+              width="20"
+              height="20"
               fill="currentColor"
               className="bi bi-info-lg"
               viewBox="0 0 16 16"

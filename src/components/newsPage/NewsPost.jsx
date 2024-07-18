@@ -1,5 +1,3 @@
-import "../../../src/App.css";
-
 function NewsPost() {
   return (
     <>
@@ -15,6 +13,7 @@ function NewsPost() {
               <p className="postMarginRight">16.385 follower </p>
               <span>
                 <span className="postMarginRight postMarginRight">2s •</span>
+
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -46,9 +45,7 @@ function NewsPost() {
           </p>
           <div className="postCard-info">
             <span>
-              {" "}
-              <a href="#" className="postLike">
-                {" "}
+              <a href="#" id="postLike">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"

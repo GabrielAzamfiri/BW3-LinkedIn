@@ -22,6 +22,103 @@ body {
   background-color: #eaf5f3 !important;
 }
 
+
+/* --------------------------- IMPORT ANALISI-------------------------------------- */
+
+
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.icon {
+  margin-right: 12px;
+}
+
+.icons2 {
+  margin-right: 33px;
+}
+
+.titolo {
+  font-weight: 700;
+}
+
+.sotto {
+  color: rgb(140, 137, 137);
+}
+
+.sottotitolo {
+  color: rgb(140, 137, 137);
+  margin-left: 12px;
+}
+
+.bodyText {
+  color: rgb(89, 88, 88);
+}
+
+.tabella {
+  border-radius: 18px;
+}
+
+.ultimo {
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.testoAggiuntivo {
+  color: rgb(137, 134, 134);
+}
+
+footer a {
+  text-decoration: none;
+  color: rgb(136, 134, 134);
+  font-size: 0.8em;
+}
+
+.lingua {
+  font-size: 12px;
+}
+
+.bgFooter {
+  background-color: #f4f2ee;
+  line-height: 8mm;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  letter-spacing: 0.2px;
+}
+
+.footer-copyright {
+  margin-top: 20px;
+}
+
+.footerBiglist {
+  font-size: 18px;
+}
+
+.listOne {
+  font-weight: 600;
+}
+
+/* Prova */
+
+.chat {
+  background-color: wheat;
+  border-radius: 15px;
+}
+
+.line {
+  display: inline-block;
+}
+
+.addButton {
+  margin-left: 12px;
+}
+
+
+/* --------------------------- FINE IMPORT ANALISI-------------------------------------- */
+
+
+
 /* --------------------------- CARD - NEWS SIDE LEFT-------------------------------------- */
 
 .newsSideLeftCard {
@@ -47,7 +144,7 @@ body {
 .nslAvatar {
   background-color: #fff;
   border-radius: 50%;
-  padding: 10px;
+  padding: 2px;
   position: absolute;
   bottom: -30px;
   width: 60px;
@@ -90,9 +187,12 @@ body {
   padding: 20px;
 }
 
+
+
 .nslSection p {
   margin: 0;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .nslSection a {
@@ -106,13 +206,16 @@ body {
 
 .nslSection .icon {
   float: right;
-  vertical-align: top;
+  /* vertical-align: top; */
+  margin-top: -4px;
 }
 
 .nslSection .icon2 {
   float: left;
   font-size: 18px;
   margin-right: 10px;
+  margin-top: -5px;
+
 }
 
 .icon {
@@ -156,6 +259,7 @@ body {
 
 .nsrCard-header .icon {
   font-size: 16px;
+  margin-top: -7px;
 }
 
 .nsrCard-content {
@@ -227,6 +331,12 @@ body {
   align-items: center;
 }
 
+.postProfile-info {
+  display: flex;
+  align-items: center;
+  float: right;
+}
+
 .logo {
   width: 40px;
   height: 40px;
@@ -235,8 +345,9 @@ body {
 }
 
 .postProfile-info h3 {
-  margin: 0;
   font-size: 14px;
+
+
 }
 
 .postProfile-info p {
@@ -301,7 +412,7 @@ body {
 .postProfile-info span {
   font-size: 12px;
   color: #777;
-  margin-right: 15px;
+  margin-right: 8px;
 }
 
 .postCard-footer {
@@ -333,6 +444,7 @@ body {
 .postLike {
   margin-right: 5px;
   color: black;
+
 }
 
 .postMarginRight {
@@ -356,6 +468,78 @@ body {
   font-size: 19px;
   margin-right: 7px;
   letter-spacing: -0.5px;
+
+}
+
+
+/* ------------------- --------END-POST-------- ------------------------ */
+
+
+
+
+
+
+
+/* ------------------- --------START CREATE POST-------- ------------------------ */
+
+
+
+
+
+
+.createPost-container {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 14px;
+}
+
+.createPost-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.createPost-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.createPost-input input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+.createPost-options {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.option-createPost {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+.option-createPost span {
+  font-size: 14px;
+  color: #555;
+}
+
+.createLeft {
+  margin-left: 7px;
+  margin-top: 12px;
 }
 
 /* ------------------- --------END-POST-------- ------------------------ */
@@ -369,144 +553,4 @@ body {
   margin-top: 10px;
 }
 
-.me-2 {
-  margin-right: 0.5rem;
-}
-
-.navbar-nav {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-nav .nav-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.navbar-nav .dropdown-toggle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.custom-navbar {
-  height: 50px;
-}
-
-.custom-navbar .navbar-brand img {
-  max-height: 100%;
-}
-
-.custom-navbar .navbar-nav .nav-link,
-.custom-navbar .navbar-nav .dropdown-toggle {
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.custom-navbar .navbar-collapse {
-  align-items: center;
-}
-
-/* .custom-dropdown-toggle::after {
-  display: none !important;
-} */
-
-.vertical-separator {
-  height: 50px;
-  width: 1px;
-  background-color: #ccc;
-  margin: 0 10px;
-}
-
-/* css per le ricerche recente */
-.search-results {
-  position: absolute;
-  width: 100%;
-  max-height: 300px;
-  overflow-y: auto;
-  background: white;
-  border: 1px solid #ccc;
-  z-index: 1000;
-}
-
-.recent-searches-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-}
-
-.recent-searches-header span {
-  font-weight: bold;
-}
-
-.recent-search-item {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.recent-search-item img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-/* pulsante "X" per cancellare il testo nella barra di ricerca */
-.search-bar-container {
-  position: relative;
-}
-
-.search-bar .form-control {
-  padding-right: 30px;
-}
-
-.clear-icon {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  color: #aaa;
-}
-
-.search-results {
-  position: absolute;
-  width: 100%;
-  max-height: 300px;
-  overflow-y: auto;
-  background: white;
-  border: 1px solid #ccc;
-  z-index: 1000;
-}
-
-.recent-searches-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-}
-
-.recent-searches-header span {
-  font-weight: bold;
-}
-
-.recent-search-item {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.recent-search-item img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
+/* ------------------- --------END CREATE POST-------- ------------------------ */
