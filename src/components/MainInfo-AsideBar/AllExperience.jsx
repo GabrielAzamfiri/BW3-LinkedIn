@@ -31,8 +31,11 @@ const AllExperience = () => {
         {experiences &&
           experiences.map((experience, index) => {
             return (
-              <div key={index}>
-                <Col md="12" className="justify-content-between mb-4">
+              <Row key={index}>
+                <Col xs={2} className="d-flex align-items-top justify-content-end">
+                  <img src={experience.image} alt="profile image" className="" width={80} height={80} />
+                </Col>
+                <Col md="10" className="justify-content-between mb-4">
                   <div>
                     <div className="">
                       <div className="d-flex align-items-center justify-content-between">
@@ -50,7 +53,7 @@ const AllExperience = () => {
                   </div>
                 </Col>
                 <hr />
-              </div>
+              </Row>
             );
           })}
       </Row>

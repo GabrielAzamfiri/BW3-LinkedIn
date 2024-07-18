@@ -20,6 +20,37 @@ function Modalexp({ title, experience }) {
     area: "",
   });
 
+  const formData = new FormData();
+  const onFileChange = e => {
+    console.log(e.target.files[0]);
+    if (e.target && e.target.files[0]) {
+      formData.append("experience", e.target.files[0]);
+    }
+  };
+  const myImageAction = expId => {
+    fetch(`https://striveschool-api.herokuapp.com/api/profile/${Profile._id}/experiences/${expId}/picture`, {
+      method: "POST",
+      body: formData,
+      headers: {
+        Authorization: `Bearer ${import.meta.env.VITE_FETCH_KEY}`,
+      },
+    })
+      .then(resp => {
+        if (resp.ok) {
+          alert(`Immagine caricata con successo!`);
+        } else {
+          throw new Error("Errore nel reperimento dei dati");
+        }
+      })
+      .then(deletedresp => {
+        console.log(deletedresp);
+        dispatch(profileEsperienzeAction(Profile._id));
+      })
+      .catch(Error => {
+        console.log(Error);
+      });
+  };
+
   const myExperienceAction = () => {
     fetch(`https://striveschool-api.herokuapp.com/api/profile/${Profile._id}/experiences`, {
       method: "POST",
@@ -36,8 +67,9 @@ function Modalexp({ title, experience }) {
           throw new Error("Errore nel reperimento dei dati");
         }
       })
-      .then(deletedresp => {
-        console.log(deletedresp);
+      .then(resp => {
+        console.log(resp);
+        myImageAction(resp._id);
         dispatch(profileEsperienzeAction(Profile._id));
       })
       .catch(Error => {
@@ -62,6 +94,7 @@ function Modalexp({ title, experience }) {
       })
       .then(modifyResp => {
         console.log(modifyResp);
+        myImageAction(modifyResp._id);
         dispatch(profileEsperienzeAction(Profile._id));
       })
       .catch(Error => {
@@ -171,6 +204,10 @@ function Modalexp({ title, experience }) {
             <Form.Group className="mb-3" controlId="exampleForm.area">
               <Form.Label>Area</Form.Label>
               <Form.Control onChange={e => setExperiences({ ...experiences, area: e.target.value })} value={experiences.area} name="area" as="textarea" rows={1} required />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="exampleForm.endDate">
+              <Form.Label>Choose an image</Form.Label>
+              <Form.Control onChange={e => onFileChange(e)} name="experience" type="file" rows={1} />
             </Form.Group>
             <Button variant="primary" type="submit">
               Salva
