@@ -1,4 +1,4 @@
-import { Dropdown, Image, Button } from "react-bootstrap";
+import { Dropdown, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const UserDropdown = ({ userInfo, handleLogout }) => {
