@@ -124,7 +124,9 @@ footer a {
   font-size: 14px;
   letter-spacing: 0.2px;
 }
-
+.asideLink {
+  cursor: pointer;
+}
 .nslHeader {
   background-color: #026660;
   background-image: url(./components/newsPage/a.png);
