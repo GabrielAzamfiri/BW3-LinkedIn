@@ -3,6 +3,7 @@ import { epicPostsAction } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { Col, Row } from "react-bootstrap";
 import { GlobeAmericas } from "react-bootstrap-icons";
+import ModalModifyPost from "./ModalModifyPost";
 
 function NewsPost() {
   const dispatch = useDispatch();
@@ -12,10 +13,12 @@ function NewsPost() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const arrPosts = useSelector(state => state.posts.posts);
+  const profile = useSelector(state => state.profile.profile);
 
   return (
     <>
       {arrPosts &&
+        profile &&
         arrPosts.map((post, index) => {
           return (
             <div className="postCard my-4" key={index}>
@@ -44,6 +47,7 @@ function NewsPost() {
                       <a href="#" className="postFollow postMarginRight">
                         Collegati
                       </a>
+                      {profile._id === post.user._id && <ModalModifyPost post={post} />}
                     </div>
                   </Col>
                 </Row>

@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { Form } from "react-bootstrap";
-import { Asterisk, Calendar, CaretDownFill, Clock, EmojiSmile, Image, PlusLg } from "react-bootstrap-icons";
+import { Asterisk, Calendar, CaretDownFill, Clock, EmojiSmile, Image, Pencil, PlusLg } from "react-bootstrap-icons";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import { epicPostsAction } from "../../redux/actions";
 
-function ModalCreatePost() {
+function ModalModifyPost({ post }) {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const [textPost, setTextPost] = useState({
-    text: "",
+    text: post.text,
   });
 
   const handleClose = () => setShow(false);
@@ -47,9 +47,9 @@ function ModalCreatePost() {
       });
   };
 
-  const creaPostAction = () => {
-    fetch(`https://striveschool-api.herokuapp.com/api/posts`, {
-      method: "POST",
+  const modificaPostAction = postId => {
+    fetch(`https://striveschool-api.herokuapp.com/api/posts/${postId}`, {
+      method: "PUT",
       body: JSON.stringify(textPost),
       headers: {
         "Content-Type": "application/json",
@@ -74,17 +74,39 @@ function ModalCreatePost() {
       });
   };
 
+  const deletePostAction = () => {
+    fetch(`https://striveschool-api.herokuapp.com/api/posts/${post._id}`, {
+      method: "DELETE",
+      headers: {
+        // chiave di autenticazione
+        Authorization: `Bearer ${import.meta.env.VITE_FETCH_KEY}`,
+      },
+    }) // già a questo punto la risorsa è stata eliminata
+      // aspettare con un then ci può essere utile anche solo per sapere esattamente quando il server ci ha risposto per avere ulteriore conferma
+
+      .then(resp => {
+        if (resp.ok) {
+          alert(`Post cancellato con successo!`);
+          dispatch(epicPostsAction());
+          handleClose();
+        } else {
+          throw `Errore ${resp.status} : ${resp.statusText} `;
+        }
+      })
+
+      .catch(err => alert(err));
+  };
   const profile = useSelector(state => state.profile.profile);
   const handleSubmit = e => {
     e.preventDefault();
-    creaPostAction();
+    modificaPostAction(post._id);
     handleClose();
   };
   //   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium aliquid debitis error voluptate delectus ipsa eius quos! Dolore, soluta. Dolorem neque itaque, distinctio praesentium veniam culpa mollitia quo ut! Natus?
   return (
     <>
-      <Button variant="transparent" onClick={handleShow} className="me-2 py-3 text-start  rounded-pill w-100 border opacity-75 creaPost">
-        Crea un post
+      <Button variant="transparent" className="pencil  rounded-circle d-flex align-items-center justify-content-center " onClick={handleShow}>
+        <Pencil className="fs-5  " />
       </Button>
 
       <Modal show={show} onHide={handleClose} size="lg">
@@ -119,6 +141,9 @@ function ModalCreatePost() {
         </Modal.Body>
 
         <Modal.Footer className="d-flex justify-content-between">
+          <Button variant="danger" onClick={() => deletePostAction()}>
+            Elimina
+          </Button>
           <Clock className="fs-4 ms-auto me-3" />
           <Button variant="primary" className="rounded-pill me-2 px-4  fw-bold " type="submit" onClick={e => handleSubmit(e)}>
             Pubblica
@@ -129,4 +154,4 @@ function ModalCreatePost() {
   );
 }
 
-export default ModalCreatePost;
+export default ModalModifyPost;
