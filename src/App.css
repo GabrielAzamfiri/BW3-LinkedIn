@@ -878,10 +878,12 @@ footer a {
 
 
 .star-rating {
+  width: 100%;
   direction: rtl;
   display: inline-block;
   font-size: 2em;
   unicode-bidi: bidi-override;
+  color: #0073b1;
 }
 
 .star-rating>span {
@@ -890,15 +892,15 @@ footer a {
   width: 1.1em;
 }
 
-.star-rating>div:hover:before,
-.star-rating>div:hover~div:before {
+.star-rating>span:hover:before,
+.star-rating>span:hover~span:before {
   content: "\2605";
   /* Unicode character for filled star */
   position: absolute;
   color: #0073b1;
 }
 
-.star-rating>div:before {
+.star-rating>span:before {
   content: "\2606";
   /* Unicode character for empty star */
   position: absolute;
@@ -908,6 +910,61 @@ star-rating p {
   font-size: 12px;
 }
 
-.starSpacing {
+
+.verticalStar {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-right: 15px;
+}
+
+
+.starSpacingMain {
   width: 100%;
+  justify-content: center;
+}
+
+
+------------------ prov star -------------- input[name="c4l-rating"] {
+  display: none;
+}
+
+
+
+
+
+
+.demo-content input[name="c4l-rating"] {
+  display: none;
+}
+
+input[name="c4l-rating"]+label:after {
+  content: none;
+}
+
+input[name="c4l-rating"]+label {
+  font-family: 'FontAwesome';
+}
+
+input[name="c4l-rating"]+label:before {
+  background-color: transparent;
+  border: none !important;
+  color: #ffc107;
+  content: "\2605";
+  font-size: 1.33333333em;
+  transition: none;
+  font-size: 30px;
+}
+
+input[name="c4l-rating"]:checked~label:before {
+  background-color: transparent;
+  border: none !important;
+  color: #607d8b;
+}
+
+input[name="c4l-rating"]:checked+label:before {
+  color: #ffc107;
+}
+
+input[name="c4l-rating"]+label:hover~input+label:before {
+  opacity: 0.6;
 }
