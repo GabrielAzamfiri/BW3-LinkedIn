@@ -7,13 +7,40 @@ import ModalModifyPost from "./ModalModifyPost";
 
 function NewsPost() {
   const dispatch = useDispatch();
-  const [showComments, setShowComments] = useState(false);
+  const [comments, setComments] = useState([]);
+  const [selectPost, setSelectPost] = useState({});
   useEffect(() => {
     dispatch(epicPostsAction());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const arrPosts = useSelector(state => state.posts.posts);
   const profile = useSelector(state => state.profile.profile);
+
+  const getCommentsAction = () => {
+    fetch(`https://striveschool-api.herokuapp.com/api/comments/`, {
+      headers: {
+        Authorization: `Bearer ${import.meta.env.VITE_FETCH_KEY}`,
+      },
+    })
+      .then(resp => {
+        if (resp.ok) {
+          return resp.json();
+        } else {
+          throw new Error("Errore nel reperimento dei dati");
+        }
+      })
+      .then(resp => {
+        console.log(resp);
+        setComments(resp);
+      })
+      .catch(Error => {
+        console.log(Error);
+      });
+  };
+
+  useEffect(() => {
+    getCommentsAction();
+  }, []);
 
   return (
     <>
@@ -70,14 +97,27 @@ function NewsPost() {
               </div>
               <div className="postCard-footer">
                 <button className="action-btn">Consiglia</button>
-                <button className="action-btn" onClick={() => setShowComments(!showComments)}>
+                <button className="action-btn" onClick={() => setSelectPost(post)}>
                   Commenta
                 </button>
                 <button className="action-btn">Diffondi il post</button>
                 <button className="action-btn">Invia</button>
               </div>
-              <div className={showComments ? "d-block" : "d-none"}>
-                <div>showComments</div>
+              <div className={selectPost._id === post._id ? "d-block" : "d-none"}>
+                <div>
+                  {comments &&
+                    comments
+                      .filter(comm => comm.elementId === post._id)
+                      .map((comment, index) => {
+                        return (
+                          <div key={index} className="mt-2">
+                            <h4 className="fs-5">{comment.author}</h4>
+                            <p>{comment.comment}</p>
+                            <hr />
+                          </div>
+                        );
+                      })}
+                </div>
               </div>
             </div>
           );
