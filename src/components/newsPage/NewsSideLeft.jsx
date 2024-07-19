@@ -14,7 +14,7 @@ function NewsSideLeft() {
         <div className="newsSideLeftCard">
           <div className="nslHeader">
             <div className="nslAvatar">
-              <img src={profile.image} alt="Profile Picture" />
+              <img src={profile.image} alt="Profile Picture" className="rounded-circle border border-1 border-white" width={80} height={80} />
             </div>
           </div>
           <div className="nslContent">
