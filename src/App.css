@@ -859,25 +859,33 @@ footer a {
 }
 
 
+/* ------------------------ ------------ START Rating Box ------- ----------------------- */
 
 
 
-/* ----------------------- Rating Stars ----------------------- */
+.ratingBox {
+  width: 100%;
+  justify-content: center;
+}
+
+.subRating {
+  margin-right: 20px;
+  font-size: 18px;
+}
 
 
+/* ------------------------ ------------ END Rating Box ------- ----------------------- */
 
 
 .star-rating {
-  width: 100%;
   direction: rtl;
-  color: #0073b1;
+  display: inline-block;
   font-size: 2em;
   unicode-bidi: bidi-override;
-  justify-content: center;
-
 }
 
-.star-rating>div {
+.star-rating>span {
+  display: inline-block;
   position: relative;
   width: 1.1em;
 }
