@@ -775,3 +775,10 @@ footer a {
   width: 20px;
   height: 20px;
 }
+
+.jobsidebar-text {
+  cursor: pointer;
+}
+/* .jobsidebar-text:hover {
+  background-color: #dbdbdb;
+} */

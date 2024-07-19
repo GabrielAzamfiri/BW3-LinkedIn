@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Form, FormControl } from "react-bootstrap";
 import "./SearchBar.css";
 
@@ -16,6 +16,10 @@ const JobSearchBar = ({ onSearch }) => {
     }
   };
 
+  useEffect(()=>{
+    onSearch(query)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
   return (
     <div className="search-bar-container">
       <Form className="mx-auto search-bar" onSubmit={handleSearch}>
