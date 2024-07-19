@@ -104,19 +104,50 @@ function NewsPost() {
                 <button className="action-btn">Invia</button>
               </div>
               <div className={selectPost._id === post._id ? "d-block" : "d-none"}>
-                <div>
-                  {comments &&
-                    comments
-                      .filter(comm => comm.elementId === post._id)
-                      .map((comment, index) => {
-                        return (
-                          <div key={index} className="mt-2">
-                            <h4 className="fs-5">{comment.author}</h4>
-                            <p>{comment.comment}</p>
-                            <hr />
-                          </div>
-                        );
-                      })}
+                <div className="comment-section">
+                  <div className="add-comment">
+                    <img src={profile.image} alt="Profile Pic" width={60} height={60} className="avatar" />
+                    <input type="text" placeholder="Aggiungi un commento..." />
+                  </div>
+                  <div className="my-3 d-flex starSpacing">
+                    <div className="d-flex starSpacing ">
+                      <div className="star-rating d-flex mb-5 justify-content-center">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="comments">
+                    {comments &&
+                      comments
+                        .filter(comm => comm.elementId === post._id)
+                        .map((comment, index) => {
+                          return (
+                            <div className="comment" key={index}>
+                              <div className="comment-content">
+                                <div className="comment-header">
+                                  <span className="comment-author">{comment.author}</span>
+                                  <span className="comment-time">· 3° e oltre · 1 settimana</span>
+                                </div>
+                                <div className="comment-body">
+                                  <p>{comment.comment}</p>
+                                </div>
+                                <div className="comment-footer">
+                                  <span className="recommend">
+                                    Consiglia · <span className="recommend-icons">👍 ❤️</span> 7
+                                  </span>
+                                  <a href="#" className="reply">
+                                    Rispondi
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                  </div>
                 </div>
               </div>
             </div>
