@@ -68,31 +68,31 @@ function NewsPost() {
       });
   };
 
-  const modificaPostAction = commId => {
-    fetch(`https://striveschool-api.herokuapp.com/api/comments/${commId}`, {
-      method: "PUT",
-      body: JSON.stringify(comment),
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${import.meta.env.VITE_FETCH_KEY}`,
-      },
-    })
-      .then(resp => {
-        if (resp.ok) {
-          return resp.json();
-        } else {
-          throw new Error("Errore nel reperimento dei dati");
-        }
-      })
-      .then(post => {
-        console.log(post);
-        getCommentsAction();
-        alert(`Commento modificato con successo!`);
-      })
-      .catch(Error => {
-        console.log(Error);
-      });
-  };
+  // const modificaPostAction = commId => {
+  //   fetch(`https://striveschool-api.herokuapp.com/api/comments/${commId}`, {
+  //     method: "PUT",
+  //     body: JSON.stringify(comment),
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: `Bearer ${import.meta.env.VITE_FETCH_KEY}`,
+  //     },
+  //   })
+  //     .then(resp => {
+  //       if (resp.ok) {
+  //         return resp.json();
+  //       } else {
+  //         throw new Error("Errore nel reperimento dei dati");
+  //       }
+  //     })
+  //     .then(post => {
+  //       console.log(post);
+  //       getCommentsAction();
+  //       alert(`Commento modificato con successo!`);
+  //     })
+  //     .catch(Error => {
+  //       console.log(Error);
+  //     });
+  // };
 
   const deleteCommentAction = commId => {
     fetch(`https://striveschool-api.herokuapp.com/api/comments/${commId}`, {
