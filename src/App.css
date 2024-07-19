@@ -625,3 +625,118 @@ footer a {
   border-radius: 50%;
   margin-right: 10px;
 }
+
+/* Stile per la pagina Jobs */
+/* Stile per la pagina Jobs */
+.jobs-container {
+  padding: 20px;
+}
+
+.jobs-sidebar {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.jobs-content {
+  padding: 20px;
+}
+
+.job-footer {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px rgb(189, 189, 189) solid;
+}
+
+.footer-title {
+  font-size: 20px;
+}
+
+.footer-subtitle {
+  font-size: 14px;
+}
+
+.footer-text1 {
+  padding: 20px 0;
+  font-size: 12px;
+}
+
+.footer-text2 {
+  font-size: 15px;
+  padding-bottom: 20px;
+}
+
+.footer-link {
+  font-size: 12px;
+}
+
+.jobs-header {
+  margin-bottom: 20px;
+}
+
+.jobs-header h1 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.jobs-header p {
+  color: #6c757d;
+  font-size: 16px;
+  margin: 0;
+}
+
+.jobs-list .job-item {
+  border-bottom: 1px solid #e1e1e1;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.job-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.job-company {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+
+.job-location {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 15px;
+}
+
+/* button {
+  width: 100%;
+} */
+
+.show-more {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.show-more:hover {
+  background-color: #ebebeb;
+}
+
+.improve-resume {
+  cursor: pointer;
+}
+
+.icon-jobsSidebar {
+  margin-right: 8px;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+}
+
+.jobsidebar-text {
+  cursor: pointer;
+}
+/* .jobsidebar-text:hover {
+  background-color: #dbdbdb;
+} */
