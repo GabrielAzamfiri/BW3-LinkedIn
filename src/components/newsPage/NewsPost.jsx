@@ -102,17 +102,52 @@ function NewsPost() {
                         placeholder="Aggiungi un commento..."
                       />
                     </div>
-                    <div className="my-3 d-flex starSpacing">
-                      <div className="d-flex starSpacing ">
-                        <div className="star-rating d-flex mb-5 justify-content-center">
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                        </div>
+                    <div className="demo-content my-3 d-flex justify-content-center ">
+                      <div className="c4l-rating ">
+                        <input
+                          className="provaStar"
+                          name="c4l-rating"
+                          type="radio"
+                          id="c4l-rate1"
+                          value="1"
+                        />
+                        <label htmlFor="c4l-rate1"></label>
+
+                        <input
+                          name="c4l-rating"
+                          type="radio"
+                          id="c4l-rate2"
+                          value="2"
+                        />
+                        <label htmlFor="c4l-rate2"></label>
+
+                        <input
+                          name="c4l-rating"
+                          type="radio"
+                          id="c4l-rate3"
+                          value="3"
+                        />
+                        <label htmlFor="c4l-rate3"></label>
+
+                        <input
+                          name="c4l-rating"
+                          type="radio"
+                          id="c4l-rate4"
+                          value="4"
+                        />
+                        <label htmlFor="c4l-rate4"></label>
+
+                        <input
+                          name="c4l-rating"
+                          type="radio"
+                          id="c4l-rate5"
+                          value="5"
+                          checked
+                        />
+                        <label htmlFor="c4l-rate5"></label>
                       </div>
                     </div>
+
                     <div className="comments">
                       <div className="comment">
                         <img
