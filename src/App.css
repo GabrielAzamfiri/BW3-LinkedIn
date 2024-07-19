@@ -719,6 +719,7 @@ footer a {
   justify-content: center;
   cursor: pointer;
 }
+
 .show-more:hover {
   background-color: #ebebeb;
 }
@@ -737,6 +738,176 @@ footer a {
 .jobsidebar-text {
   cursor: pointer;
 }
+
 /* .jobsidebar-text:hover {
   background-color: #dbdbdb;
 } */
+
+
+
+/* ------------------------ ------------ Comments ------- ----------------------- */
+
+
+
+
+.comment-section {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-comment {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.add-comment .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.add-comment input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  outline: none;
+}
+
+.comments .comment {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.comments .comment:last-child {
+  border-bottom: none;
+}
+
+.comments .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.comment-content {
+  flex: 1;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.comment-author {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.comment-time {
+  color: #888888;
+}
+
+.comment-body {
+  margin-bottom: 5px;
+}
+
+.comment-body p {
+  margin: 0;
+}
+
+.comment-body a {
+  color: #0073b1;
+  text-decoration: none;
+}
+
+.comment-body a:hover {
+  text-decoration: underline;
+}
+
+.comment-footer {
+  display: flex;
+  align-items: center;
+  font-size: 0.875em;
+  color: #888888;
+}
+
+.recommend {
+  margin-right: 10px;
+}
+
+.recommend-icons {
+  margin-left: 5px;
+}
+
+.reply {
+  color: #0073b1;
+  text-decoration: none;
+}
+
+.reply:hover {
+  text-decoration: underline;
+}
+
+
+/* ------------------------ ------------ START Rating Box ------- ----------------------- */
+
+
+
+.ratingBox {
+  width: 100%;
+  justify-content: center;
+}
+
+.subRating {
+  margin-right: 20px;
+  font-size: 18px;
+}
+
+
+/* ------------------------ ------------ END Rating Box ------- ----------------------- */
+
+
+.star-rating {
+  direction: rtl;
+  display: inline-block;
+  font-size: 2em;
+  unicode-bidi: bidi-override;
+}
+
+.star-rating>span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+
+.star-rating>div:hover:before,
+.star-rating>div:hover~div:before {
+  content: "\2605";
+  /* Unicode character for filled star */
+  position: absolute;
+  color: #0073b1;
+}
+
+.star-rating>div:before {
+  content: "\2606";
+  /* Unicode character for empty star */
+  position: absolute;
+}
+
+star-rating p {
+  font-size: 12px;
+}
+
+.starSpacing {
+  width: 100%;
+}
