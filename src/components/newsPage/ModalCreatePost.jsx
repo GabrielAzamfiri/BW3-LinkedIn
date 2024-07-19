@@ -16,13 +16,36 @@ function ModalCreatePost() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  //   const formData = new FormData();
-  //   const onFileChange = e => {
-  //     console.log(e.target.files[0]);
-  //     if (e.target && e.target.files[0]) {
-  //       formData.append("profile", e.target.files[0]);
-  //     }
-  //   };
+  const formData = new FormData();
+  const onFileChange = e => {
+    console.log(e.target.files[0]);
+    if (e.target && e.target.files[0]) {
+      formData.append("post", e.target.files[0]);
+    }
+  };
+  const myPostImageAction = postId => {
+    fetch(`https://striveschool-api.herokuapp.com/api/posts/${postId}`, {
+      method: "POST",
+      body: formData,
+      headers: {
+        Authorization: `Bearer ${import.meta.env.VITE_FETCH_KEY}`,
+      },
+    })
+      .then(resp => {
+        if (resp.ok) {
+          alert(`Immagine caricata con successo!`);
+        } else {
+          throw new Error("Errore nel reperimento dei dati");
+        }
+      })
+      .then(deletedresp => {
+        console.log(deletedresp);
+        dispatch(epicPostsAction());
+      })
+      .catch(Error => {
+        console.log(Error);
+      });
+  };
 
   const creaPostAction = () => {
     fetch(`https://striveschool-api.herokuapp.com/api/posts`, {
@@ -42,7 +65,8 @@ function ModalCreatePost() {
       })
       .then(post => {
         console.log(post);
-        dispatch(epicPostsAction());
+        myPostImageAction(post._id);
+        // dispatch(epicPostsAction());
         alert(`Post caricato con successo!`);
       })
       .catch(Error => {
@@ -79,6 +103,10 @@ function ModalCreatePost() {
           <Form onSubmit={e => handleSubmit(e)}>
             <Form.Group controlId="exampleForm.endDate">
               <Form.Control onChange={e => setTextPost({ text: e.target.value })} as="textarea" rows={5} placeholder="Di cosa vorresti parlare?" />
+            </Form.Group>
+            <Form.Group controlId="exampleForm.endDate" className="mt-3">
+              <Form.Label>Choose an image</Form.Label>
+              <Form.Control onChange={e => onFileChange(e)} name="post" type="file" rows={1} />
             </Form.Group>
           </Form>
           <EmojiSmile className="fs-4 d-block my-5" />

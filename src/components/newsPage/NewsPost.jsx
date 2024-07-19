@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { epicPostsAction } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { Col, Row } from "react-bootstrap";
@@ -6,7 +6,7 @@ import { GlobeAmericas } from "react-bootstrap-icons";
 
 function NewsPost() {
   const dispatch = useDispatch();
-
+  const [showComments, setShowComments] = useState(false);
   useEffect(() => {
     dispatch(epicPostsAction());
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -25,11 +25,11 @@ function NewsPost() {
                     <img src={post.user.image} alt="img profile" className="logo" />
                   </Col>
 
-                  <Col xs={8} className="postProfile-info  ">
+                  <Col xs={8} className="postProfile-info ">
                     <div>
-                      <h3 className="fs-5">
+                      <a className="m-0 fs-6 d-block text-dark fw-bold link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
                         {post.user.name} {post.user.surname}
-                      </h3>
+                      </a>
                       <p className="postMarginRight">
                         {post.user.title}{" "}
                         <span className="ps-3">
@@ -50,9 +50,8 @@ function NewsPost() {
               </div>
               <div className="postCard-content">
                 <h4>{post.text}</h4>
-                <p>
-                  {post.user.bio} ... <a href="#">altro</a>
-                </p>
+                {post.image && <img src={post.image} width={200} alt="image post" />}
+
                 <div className="postCard-info">
                   <span>
                     <a href="#" id="postLike">
@@ -67,9 +66,14 @@ function NewsPost() {
               </div>
               <div className="postCard-footer">
                 <button className="action-btn">Consiglia</button>
-                <button className="action-btn">Commenta</button>
+                <button className="action-btn" onClick={() => setShowComments(!showComments)}>
+                  Commenta
+                </button>
                 <button className="action-btn">Diffondi il post</button>
                 <button className="action-btn">Invia</button>
+              </div>
+              <div className={showComments ? "d-block" : "d-none"}>
+                <div>showComments</div>
               </div>
             </div>
           );
