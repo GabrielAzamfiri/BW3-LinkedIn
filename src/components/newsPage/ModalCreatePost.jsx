@@ -80,9 +80,6 @@ function ModalCreatePost() {
             <Form.Group controlId="exampleForm.endDate">
               <Form.Control onChange={e => setTextPost({ text: e.target.value })} as="textarea" rows={5} placeholder="Di cosa vorresti parlare?" />
             </Form.Group>
-            <Button variant="primary" className="rounded-pill me-2 px-4  fw-bold " type="submit">
-              Pubblica
-            </Button>
           </Form>
           <EmojiSmile className="fs-4 d-block my-5" />
           <div className="d-flex gap-4">
@@ -95,9 +92,9 @@ function ModalCreatePost() {
 
         <Modal.Footer className="d-flex justify-content-between">
           <Clock className="fs-4 ms-auto me-3" />
-          {/* <Button variant="primary" className="rounded-pill me-2 px-4  fw-bold " type="submit">
+          <Button variant="primary" className="rounded-pill me-2 px-4  fw-bold " type="submit" onClick={e => handleSubmit(e)}>
             Pubblica
-          </Button> */}
+          </Button>
         </Modal.Footer>
       </Modal>
     </>

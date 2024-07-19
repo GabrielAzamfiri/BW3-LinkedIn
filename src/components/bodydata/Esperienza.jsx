@@ -47,7 +47,11 @@ function Esperienza() {
             return (
               <Row key={index}>
                 <Col xs={2} className="d-flex align-items-top justify-content-end">
-                  <img src={experience.image} alt="profile image" className="" width={80} height={80} />
+                  {experience.image ? (
+                    <img src={experience.image} alt="profile image" width={80} height={80} />
+                  ) : (
+                    <img src="https://epicode-testapi-bucket.s3.eu-south-1.amazonaws.com/1721296396331-epicode%20logo.jpg" alt="profile image" width={80} height={80} />
+                  )}
                 </Col>
                 <Col md="10" className="justify-content-between mb-4">
                   <div className="div2 d-flex">
