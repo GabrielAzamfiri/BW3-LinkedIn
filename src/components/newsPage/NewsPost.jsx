@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
 import { epicPostsAction } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { Col, Row } from "react-bootstrap";
+import { Button, Col, Form, Row } from "react-bootstrap";
 import { GlobeAmericas } from "react-bootstrap-icons";
 import ModalModifyPost from "./ModalModifyPost";
 
 function NewsPost() {
   const dispatch = useDispatch();
+  const [comment, setComment] = useState({
+    comment: "",
+    rate: "5",
+    elementId: "",
+  });
   const [comments, setComments] = useState([]);
   const [selectPost, setSelectPost] = useState({});
   useEffect(() => {
@@ -36,6 +41,85 @@ function NewsPost() {
       .catch(Error => {
         console.log(Error);
       });
+  };
+
+  const myCommentAction = () => {
+    fetch(`https://striveschool-api.herokuapp.com/api/comments/`, {
+      method: "POST",
+      body: JSON.stringify(comment),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${import.meta.env.VITE_FETCH_KEY}`,
+      },
+    })
+      .then(resp => {
+        if (resp.ok) {
+          return resp.json();
+        } else {
+          throw new Error("Errore nel reperimento dei dati");
+        }
+      })
+      .then(resp => {
+        console.log(resp);
+        getCommentsAction();
+      })
+      .catch(Error => {
+        console.log(Error);
+      });
+  };
+
+  const modificaPostAction = commId => {
+    fetch(`https://striveschool-api.herokuapp.com/api/comments/${commId}`, {
+      method: "PUT",
+      body: JSON.stringify(comment),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${import.meta.env.VITE_FETCH_KEY}`,
+      },
+    })
+      .then(resp => {
+        if (resp.ok) {
+          return resp.json();
+        } else {
+          throw new Error("Errore nel reperimento dei dati");
+        }
+      })
+      .then(post => {
+        console.log(post);
+        getCommentsAction();
+        alert(`Commento modificato con successo!`);
+      })
+      .catch(Error => {
+        console.log(Error);
+      });
+  };
+
+  const deleteCommentAction = commId => {
+    fetch(`https://striveschool-api.herokuapp.com/api/comments/${commId}`, {
+      method: "DELETE",
+      headers: {
+        // chiave di autenticazione
+        Authorization: `Bearer ${import.meta.env.VITE_FETCH_KEY}`,
+      },
+    }) // già a questo punto la risorsa è stata eliminata
+      // aspettare con un then ci può essere utile anche solo per sapere esattamente quando il server ci ha risposto per avere ulteriore conferma
+
+      .then(resp => {
+        if (resp.ok) {
+          alert(`Commento cancellato con successo!`);
+          getCommentsAction();
+        } else {
+          throw `Errore ${resp.status} : ${resp.statusText} `;
+        }
+      })
+
+      .catch(err => alert(err));
+  };
+  const handleSubmit = e => {
+    e.preventDefault();
+    myCommentAction();
+    getCommentsAction();
+    setComment({ comment: "", rate: "5", elementId: "" });
   };
 
   useEffect(() => {
@@ -107,9 +191,23 @@ function NewsPost() {
                 <div className="comment-section">
                   <div className="add-comment">
                     <img src={profile.image} alt="Profile Pic" width={60} height={60} className="avatar" />
-                    <input type="text" placeholder="Aggiungi un commento..." />
+
+                    <Form onSubmit={e => handleSubmit(e)}>
+                      <Form.Group className="mb-3" controlId="exampleForm.company">
+                        <Form.Control
+                          className=""
+                          onChange={e => setComment({ ...comment, comment: e.target.value, elementId: post._id })}
+                          value={comment.comment}
+                          name="comment"
+                          type="text"
+                          rows={1}
+                          placeholder="Aggiungi un commento..."
+                          required
+                        />
+                      </Form.Group>
+                    </Form>
                   </div>
-                  <div className="my-3 d-flex starSpacing">
+                  {/* <div className="my-3 d-flex starSpacing">
                     <div className="d-flex starSpacing ">
                       <div className="star-rating d-flex mb-5 justify-content-center">
                         <div></div>
@@ -119,7 +217,7 @@ function NewsPost() {
                         <div></div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="comments">
                     {comments &&
                       comments
@@ -142,6 +240,16 @@ function NewsPost() {
                                   <a href="#" className="reply">
                                     Rispondi
                                   </a>
+                                  {profile.username === comment.author && (
+                                    <>
+                                      <Button variant="transparent" className="py-0 px-1 ms-auto text-primary" onClick={() => {}}>
+                                        Modifica
+                                      </Button>
+                                      <Button variant="danger" className="py-0 px-1 ms-auto" onClick={() => deleteCommentAction(comment._id)}>
+                                        Elimina
+                                      </Button>
+                                    </>
+                                  )}
                                 </div>
                               </div>
                             </div>

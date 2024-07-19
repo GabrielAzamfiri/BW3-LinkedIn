@@ -18,7 +18,7 @@ function NewsSideLeft() {
             </div>
           </div>
           <div className="nslContent">
-            <Link className="text-dark fw-bold link-underline link-underline-opacity-0 link-underline-opacity-75-hover" to={"/Profile"} onClick={() => dispatch(SELECTED_PROFILE, null)}>
+            <Link className="text-dark fw-bold link-underline link-underline-opacity-0 link-underline-opacity-75-hover fs-5" to={"/Profile"} onClick={() => dispatch(SELECTED_PROFILE, null)}>
               {profile.name} {profile.surname}
             </Link>
             <p>{profile.title}</p>
