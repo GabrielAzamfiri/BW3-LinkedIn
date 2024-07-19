@@ -9,7 +9,7 @@ function NewsPost() {
   const dispatch = useDispatch();
   const [comment, setComment] = useState({
     comment: "",
-    rate: "5",
+    rate: "1",
     elementId: "",
   });
   const [comments, setComments] = useState([]);
@@ -165,7 +165,7 @@ function NewsPost() {
               </div>
               <div className="postCard-content">
                 <h4>{post.text}</h4>
-                {post.image && <img src={post.image} width={200} alt="image post" />}
+                {post.image && <img src={post.image} className="w-100" alt="image post" />}
 
                 <div className="postCard-info">
                   <span>
@@ -189,11 +189,11 @@ function NewsPost() {
               </div>
               <div className={selectPost._id === post._id ? "d-block" : "d-none"}>
                 <div className="comment-section">
-                  <div className="add-comment">
+                  <div className="add-comment d-flex align-items-center ">
                     <img src={profile.image} alt="Profile Pic" width={60} height={60} className="avatar" />
 
                     <Form onSubmit={e => handleSubmit(e)}>
-                      <Form.Group className="mb-3" controlId="exampleForm.company">
+                      <Form.Group controlId="exampleForm.company">
                         <Form.Control
                           className=""
                           onChange={e => setComment({ ...comment, comment: e.target.value, elementId: post._id })}
@@ -206,23 +206,23 @@ function NewsPost() {
                         />
                       </Form.Group>
                     </Form>
-                  </div>
-                  <div className="demo-content my-3 d-flex justify-content-center ">
-                    <div className="c4l-rating ">
-                      <input className="provaStar" name="c4l-rating" type="radio" id="c4l-rate1" value="1" />
-                      <label htmlFor="c4l-rate1"></label>
+                    <div className="demo-content ms-auto d-flex justify-content-center align-items-center ">
+                      <div className="c4l-rating ">
+                        <input className="provaStar" name="c4l-rating" type="radio" id="c4l-rate1" value="1" onClick={e => setComment({ ...comment, rate: e.target.value })} />
+                        <label htmlFor="c4l-rate1"></label>
 
-                      <input name="c4l-rating" type="radio" id="c4l-rate2" value="2" />
-                      <label htmlFor="c4l-rate2"></label>
+                        <input name="c4l-rating" type="radio" id="c4l-rate2" value="2" onClick={e => setComment({ ...comment, rate: e.target.value })} />
+                        <label htmlFor="c4l-rate2"></label>
 
-                      <input name="c4l-rating" type="radio" id="c4l-rate3" value="3" />
-                      <label htmlFor="c4l-rate3"></label>
+                        <input name="c4l-rating" type="radio" id="c4l-rate3" value="3" onClick={e => setComment({ ...comment, rate: e.target.value })} />
+                        <label htmlFor="c4l-rate3"></label>
 
-                      <input name="c4l-rating" type="radio" id="c4l-rate4" value="4" />
-                      <label htmlFor="c4l-rate4"></label>
+                        <input name="c4l-rating" type="radio" id="c4l-rate4" value="4" onClick={e => setComment({ ...comment, rate: e.target.value })} />
+                        <label htmlFor="c4l-rate4"></label>
 
-                      <input name="c4l-rating" type="radio" id="c4l-rate5" value="5" checked />
-                      <label htmlFor="c4l-rate5"></label>
+                        <input name="c4l-rating" type="radio" id="c4l-rate5" value="5" onClick={e => setComment({ ...comment, rate: e.target.value })} />
+                        <label htmlFor="c4l-rate5"></label>
+                      </div>
                     </div>
                   </div>
                   <div className="comments">
@@ -242,7 +242,7 @@ function NewsPost() {
                                 </div>
                                 <div className="comment-footer">
                                   <span className="recommend">
-                                    Consiglia · <span className="recommend-icons">👍 ❤️</span> 7
+                                    Consiglia · <span className="recommend-icons">👍 ❤️</span> {comment.rate}
                                   </span>
                                   <a href="#" className="reply">
                                     Rispondi
