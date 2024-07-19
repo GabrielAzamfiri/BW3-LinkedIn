@@ -857,3 +857,49 @@ footer a {
 .reply:hover {
   text-decoration: underline;
 }
+
+
+
+
+
+/* ----------------------- Rating Stars ----------------------- */
+
+
+
+
+.star-rating {
+  width: 100%;
+  direction: rtl;
+  color: #0073b1;
+  font-size: 2em;
+  unicode-bidi: bidi-override;
+  justify-content: center;
+
+}
+
+.star-rating>div {
+  position: relative;
+  width: 1.1em;
+}
+
+.star-rating>div:hover:before,
+.star-rating>div:hover~div:before {
+  content: "\2605";
+  /* Unicode character for filled star */
+  position: absolute;
+  color: #0073b1;
+}
+
+.star-rating>div:before {
+  content: "\2606";
+  /* Unicode character for empty star */
+  position: absolute;
+}
+
+star-rating p {
+  font-size: 12px;
+}
+
+.starSpacing {
+  width: 100%;
+}

@@ -102,6 +102,17 @@ function NewsPost() {
                         placeholder="Aggiungi un commento..."
                       />
                     </div>
+                    <div className="my-3 d-flex starSpacing">
+                      <div className="d-flex starSpacing ">
+                        <div className="star-rating d-flex mb-5 justify-content-center">
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                        </div>
+                      </div>
+                    </div>
                     <div className="comments">
                       <div className="comment">
                         <img
